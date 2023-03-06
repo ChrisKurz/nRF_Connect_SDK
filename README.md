@@ -17,3 +17,7 @@ Here is a list of available hands-on exercises:
 - [Adding Zephyr Logging](doc/NCSv2.3.0_02_ZephyrLogging.md) - Here we add Zephyr Logging to our project. This allows us to get debug messages during runtime.
 
 - [Adding Zephyr Shell](doc/NCSv2.3.0_10_ZephyrShell.md) - Here we add Zephyr Shell to our project. This module is a UNIX-like shell.
+
+## Zephyr Kernel Services
+
+- [Data Passing: FIFOs](doc/NCSv2.3.0_ZKS_02_fifo.md) - This hands-on demonstrates how Zephyr's FIFO handling is done in its kernel.
