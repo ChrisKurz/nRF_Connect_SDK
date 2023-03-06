@@ -10,4 +10,9 @@ Here is a list of available hands-on exercises:
 
 - [Creating a Project from Scratch](doc/NCSv2.3.0_01_ProjectFromScratch.md) - This hands-on demonstrates how to create a project from scratch.
 
+
+## Zephyr OS Services
+
 - [Adding Zephyr Logging](doc/NCSv2.3.0_02_ZephyrLogging.md) - Here we add Zephyr Logging to our project. This allows us to get debug messages during runtime.
+
+- [Adding Zephyr Shell](doc/NCSv2.3.0_10_ZephyrShell.md) - Here we add Zephyr Shell to our project. This module is a UNIX-like shell.
