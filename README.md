@@ -21,8 +21,13 @@ Here is a list of available hands-on exercises:
 
 ## Zephyr Kernel Services
 
+### Data Passing
+
 - [Data Passing: FIFOs](doc/NCSv2.3.0_ZKS_02_fifo.md) - This hands-on demonstrates how Zephyr's FIFO handling is done in its kernel.
 
+### Other
+
+- [Getting Zephyr version from application software](doc/NCSv2.3.0_ZKS_Other_01_version.md) - This example shows how to retrieve the version number of Zephyr in an application software. 
 
 ## CMake
 
