@@ -27,3 +27,5 @@ Here is a list of available hands-on exercises:
 ## CMake
 
 - [Defining a folder for which all C files are automatically included into your project ](doc/CMake/CMake_01_DefineSourceFolder.md) - Adding all *.c files from your _src_ folder into your project. 
+
+- [Adding Debug messages in CMakeLists.txt file](doc/CMake/CMake_02_Debugging.md) - Getting some debug messages during build process may help to get a better understanding about what CMake is doing. This course shows how to add debug messages to CMakeLists.txt file.
