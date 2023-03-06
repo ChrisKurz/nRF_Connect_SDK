@@ -10,6 +10,7 @@ Here is a list of available hands-on exercises:
 
 - [Creating a Project from Scratch](doc/NCSv2.3.0_01_ProjectFromScratch.md) - This hands-on demonstrates how to create a project from scratch.
 
+- [User-defined KCONFIG symbols](doc/NCSv2.3.0_03_User-Defined_KCONFIG.md) - KCONFIG allows you to add software modules from Zephyr repository or other repositories. But you can also define own KCONFIG symbols. This hands-on demonstrates how this can be done.
 
 ## Zephyr OS Services
 
