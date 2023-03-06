@@ -18,6 +18,12 @@ Here is a list of available hands-on exercises:
 
 - [Adding Zephyr Shell](doc/NCSv2.3.0_10_ZephyrShell.md) - Here we add Zephyr Shell to our project. This module is a UNIX-like shell.
 
+
 ## Zephyr Kernel Services
 
 - [Data Passing: FIFOs](doc/NCSv2.3.0_ZKS_02_fifo.md) - This hands-on demonstrates how Zephyr's FIFO handling is done in its kernel.
+
+
+## CMake
+
+- [Defining a folder for which all C files are automatically included into your project ](doc/CMake/CMake_01_DefineSourceFolder.md) - Adding all *.c files from your _src_ folder into your project. 
