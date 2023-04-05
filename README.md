@@ -25,6 +25,10 @@ Here is a list of available hands-on exercises:
 
 - [Data Passing: FIFOs](doc/NCSv2.3.0_ZKS_02_fifo.md) - This hands-on demonstrates how Zephyr's FIFO handling is done in its kernel.
 
+### Timing
+
+- [Timing - Timers](doc/NCSv2.3.0_ZKS_02_Timers.md) - This hands-on demonstrates how Zephyr's Timing Kernel Service can be used (Timer for Function trigger).
+
 ### Other
 
 - [Getting Zephyr version from application software](doc/NCSv2.3.0_ZKS_Other_01_version.md) - This example shows how to retrieve the version number of Zephyr in an application software. 
