@@ -1,0 +1,49 @@
+{
+	"folders": [
+		{
+			"name": "hello_world",
+			"path": "hello_world"
+		},
+		{
+			"name": "02_Logging",
+			"path": "02_Logging"
+		},
+		{
+			"name": "10_Shell",
+			"path": "10_Shell"
+		},
+		{
+			"name": "03_UserDefinedKconfig",
+			"path": "03_UserDefinedKconfig"
+		},
+		{
+			"name": "50_fifo",
+			"path": "50_fifo"
+		},
+		{
+			"name": "ZKS_Other_Version",
+			"path": "ZKS_Other_Version"
+		},
+		{
+			"name": "ZKS_Timing_Timer",
+			"path": "ZKS_Timing_Timer"
+		}
+	],
+	"settings": {
+		"nrf-connect.applications": [
+			"${workspaceFolder}",
+			"c:\\Nordic_github\\nRF_Connect_SDK_WORK_IN_PROGRESS\\Workspace\\NCSv2.3.0\\02_Logging",
+			"c:\\Nordic_github\\nRF_Connect_SDK_WORK_IN_PROGRESS\\Workspace\\NCSv2.3.0\\10_Shell",
+			"c:\\Nordic_github\\nRF_Connect_SDK_WORK_IN_PROGRESS\\Workspace\\NCSv2.3.0\\03_UserDefinedKconfig",
+			"c:\\Nordic_github\\nRF_Connect_SDK_WORK_IN_PROGRESS\\Workspace\\NCSv2.3.0\\50_fifo",
+			"c:\\Nordic_github\\nRF_Connect_SDK_WORK_IN_PROGRESS\\Workspace\\NCSv2.3.0\\ZKS_Other_Version",
+			"c:\\Nordic_github\\nRF_Connect_SDK_WORK_IN_PROGRESS\\Workspace\\NCSv2.3.0\\ZKS_Timing_Timer"
+		],
+		"nrf-connect.topdir": "${nrf-connect.sdk:2.3.0}",
+		"nrf-connect.toolchain.path": "${nrf-connect.toolchain:2.3.0}",
+		"files.associations": {
+			"version.h": "c",
+			"kernel.h": "c"
+		}
+	}
+}
