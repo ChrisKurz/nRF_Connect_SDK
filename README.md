@@ -27,7 +27,7 @@ Here is a list of available hands-on exercises:
 
 ### Timing
 
-- [Timing - Timers](doc/NCSv2.3.0_ZKS_02_Timers.md) - This hands-on demonstrates how Zephyr's Timing Kernel Service can be used (Timer for Function trigger).
+- [Timing - Timers](doc/NCSv2.3.0_ZKS_Timing_02_Timers.md) - This hands-on demonstrates how Zephyr's Timing Kernel Service can be used (Timer for Function trigger).
 
 ### Other
 
