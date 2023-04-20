@@ -6,6 +6,10 @@
 
 A FIFO is a kernel object that implements a traditional first in, first out (FIFO) queue, allowing threads and ISRs to add and remove data items of any size.
 
+The Zephyr's FIFO is implemented as a queue and it uses a single-linked list.
+
+Detailed description can be found [here](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/zephyr/kernel/services/data_passing/fifos.html#fifos).
+
 ## Required Hardware/Software for Hands-on
 - one nRF52 development kit (e.g. nRF52DK, nRF52833DK, or nRF52840DK)
 - install the _nRF Connect SDK_ v2.3.0 and _Visual Studio Code_. The description of the installation can be found [here](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.3.0/nrf/getting_started/assistant.html#).
@@ -24,6 +28,11 @@ A FIFO is a kernel object that implements a traditional first in, first out (FIF
   
        struct k_fifo my_fifo;
 
+   The essential parts of _my_fifo_ defined here is a pair of pointer fields, called __head__ and __tail__. The __head__ field points to the first element that was placed in the FIFO. If no element has been put into the FIFO yet, then it is NULL. The __tail__ field points to the last element that was put into the FIFO. If the FIFO is still empty, then a NULL is stored here. The following picture shows the empty _my_fifo_.
+   
+   ![image](images/ZKS_FIFO_01_MyFifo.jpg)
+
+
 3) And in main loop add:
 
 	<sup>_src/main.c_ => main() function</sup>   
@@ -39,6 +48,11 @@ A FIFO is a kernel object that implements a traditional first in, first out (FIF
                int counter;
        };
        struct data_item_t my_data;
+   
+   A variable to be placed in the FIFO must have the above structure. Here the __fifo_reserved__ is used as pointer to the next element. Beside this pointer in the structure the actual data is stored, in our case the variable _counter_.
+ 
+   ![image](images/ZKS_FIFO_01_MyData.jpg)
+
 
 4) In the button_pressed function we write the counter variable to the FIFO:
 
@@ -46,6 +60,14 @@ A FIFO is a kernel object that implements a traditional first in, first out (FIF
   
            my_data.counter=my_data.counter+1;
            k_fifo_put(&my_fifo, &my_data);
+	   
+   Executing the function __k_fifo_put()__ stores the corresponding pointers. Note that an element with __k_fifo_put()__ can only be placed once in the FIFO due to the single-linked list structure. 
+   
+   ![image](images/ZKS_FIFO_01_fifoPut.jpg)
+   
+   If you now use another variable, e.g. with the name _my_other_data_, and put it into the FIFO via __k_fifo_put()__ function, it would look like this. (But note that this is only a theoretical example here. This was not realized in this hands-on code example).
+      
+   ![image](images/ZKS_FIFO_01_fifoPut2.jpg)
 
 5) Reading from the FIFO. A data item is removed from a FIFO by calling k_fifo_get(). The following code uses the FIFO to obtain data items from a producer thread, which are then processed in some manner.
 
