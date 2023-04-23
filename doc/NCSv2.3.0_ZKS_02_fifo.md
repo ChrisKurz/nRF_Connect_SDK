@@ -64,10 +64,13 @@ Detailed description can be found [here](https://developer.nordicsemi.com/nRF_Co
    Executing the function __k_fifo_put()__ stores the corresponding pointers. Note that an element with __k_fifo_put()__ can only be placed once in the FIFO due to the single-linked list structure. 
    
    ![image](images/ZKS_FIFO_01_fifoPut.jpg)
-   
+
+   __NOTE: The user code must ensure that data is removed before new data is inserted. The user code must also take this into account when handling in interrupt service routines. This hands-on example is not taking care about this!__
+
    If you now use another variable, e.g. with the name _my_other_data_, and put it into the FIFO via __k_fifo_put()__ function, it would look like this. (But note that this is only a theoretical example here. This was not realized in this hands-on code example).
       
    ![image](images/ZKS_FIFO_01_fifoPut2.jpg)
+
 
 5) Reading from the FIFO. A data item is removed from a FIFO by calling k_fifo_get(). The following code uses the FIFO to obtain data items from a producer thread, which are then processed in some manner.
 
