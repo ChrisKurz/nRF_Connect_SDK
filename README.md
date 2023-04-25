@@ -21,6 +21,10 @@ Here is a list of available hands-on exercises:
 
 ## Zephyr Kernel Services
 
+### Threads
+
+- [Thread: Creating a Thread](doc/NCSv2.3.0_ZK_Threads_01.md) - This basic hands-on demonstrates how to create a Thread.
+
 ### Data Passing
 
 - [Data Passing: FIFOs](doc/NCSv2.3.0_ZKS_02_fifo.md) - This hands-on demonstrates how Zephyr's FIFO handling is done in its kernel.
