@@ -109,8 +109,9 @@ In case the thread can be created during OS initialization, then using the K_THR
 
    <sup>_src/main.c_</sup>
 
-       #define MYTHREAD2_PRIORITY 5
+    #define MYTHREAD2_PRIORITY 5
 
+ 
 
 
 ## Testing
