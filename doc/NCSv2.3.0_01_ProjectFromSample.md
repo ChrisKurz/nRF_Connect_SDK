@@ -9,7 +9,7 @@ Here is an explanation of how to create your own project in your workspace folde
 ## Required Hardware/Software
 - install the _nRF Connect SDK_ v2.3.0 and _Visual Studio Code_. The description of the installation can be found [here](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.3.0/nrf/getting_started/assistant.html#).
 
-## Hands-on step-by-step description 
+## Step-by-step description 
 
 ### Create you own project by copying an existing Sample to your own Workspace
 
@@ -48,3 +48,24 @@ Here is an explanation of how to create your own project in your workspace folde
 9) And now press the __Create Application__ button. 
 
     ![image](images/01_Sample_CreateApp.jpg)
+
+
+### Add a Build Configuration to your Project
+
+10) You should now see the _hello_world_ project in the _nRF Connect_'s APPLICATIONS section. Now, we have to add a Build Configuration. This can be done by clicking the "Add Build Configuration" icon behind the project name (you have to move the mouse over the project name) or you just click the "Click to create one" text in the line __No build configurations__. 
+
+   ![image](images/01_Sample_BoardConfig.jpg)
+   
+11) In the __Add Build Configuration__ window we define first the board that we will use. 
+
+   ![image](images/01_Sample_Board.jpg)
+   
+12) You can now also enable Debug options in case you would like to use it. 
+
+   ![image](images/01_Sample_Debug.jpg)
+   
+13) And finally click the __Build Configuration__ button. 
+
+   ![image](images/01_Sample_BuildConfig.jpg)
+   
+
