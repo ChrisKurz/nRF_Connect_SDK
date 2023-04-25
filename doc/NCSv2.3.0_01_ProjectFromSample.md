@@ -27,7 +27,7 @@ Here is an explanation of how to create your own project in your workspace folde
 
 4) Select the _nRF Connect SDK_ and _nRF Connect Toolchain_ versions you would like to use. 
 
-    ![image](imsges/01_Sample_Versions.jpg)
+    ![image](images/01_Sample_Versions.jpg)
     
 5) Define the Workspace folder. This is the folder where you will store all your projects. NOTE: Avoid to use spaces in the workspace name and place the Workspace folder close to the root directory (avoid long pathes here)!
 
