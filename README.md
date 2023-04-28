@@ -20,6 +20,8 @@ Here is a list of available hands-on exercises:
 
 - [Zephyr Logging in modules with multiple files](doc/NCSv2.3.0_02_ZephyrLogging_declare.md) - This hands-on shows how to add Logging to a module that consist of multiple files.
 
+- [Zephyr Logging with minimal Memory Footprint](doc/NCSv2.3.0_02_ZephyrLogging_minimal.md) - This hands-on shows how to optimize memory footprint of Zephyr Logging.
+
 ### Shell
 
 - [Adding Zephyr Shell](doc/NCSv2.3.0_10_ZephyrShell.md) - Here we add Zephyr Shell to our project. This module is a UNIX-like shell.

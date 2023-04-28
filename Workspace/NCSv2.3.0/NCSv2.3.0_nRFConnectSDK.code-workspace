@@ -39,6 +39,10 @@
 		{
 			"name": "02_Logging_declare",
 			"path": "02_Logging_declare"
+		},
+		{
+			"name": "02_Logging_minimal",
+			"path": "02_Logging_minimal"
 		}
 	],
 	"settings": {
