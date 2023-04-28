@@ -20,7 +20,7 @@ And it can also be used for your own application. We will have a closer look at 
 
 ## Hands-on step-by-step description 
 
-### Creade Project from scratch
+### Create Project from scratch
 
 1) Create a new project folder.  For example,   c:/MyWorkspace/Logging
 2) Add _CMakeLists.txt_ and _prj.conf_ to this folder. In the subfolder __src__ add _main.c_.
