@@ -27,6 +27,18 @@
 		{
 			"name": "ZKS_Timing_Timer",
 			"path": "ZKS_Timing_Timer"
+		},
+		{
+			"name": "ZKS_Thread_01",
+			"path": "ZKS_Thread_01"
+		},
+		{
+			"name": "machine_learning",
+			"path": "../../../../Nordic/NCS/v2.3.0/nrf/applications/machine_learning"
+		},
+		{
+			"name": "02_Logging_declare",
+			"path": "02_Logging_declare"
 		}
 	],
 	"settings": {
