@@ -12,6 +12,9 @@ Here is a list of available hands-on exercises:
 
 - [User-defined KCONFIG symbols](doc/NCSv2.3.0_03_User-Defined_KCONFIG.md) - KCONFIG allows you to add software modules from Zephyr repository or other repositories. But you can also define own KCONFIG symbols. This hands-on demonstrates how this can be done.
 
+- [Generating a License Report](doc/NCSv2.3.0_LicenseReport.md) - _nRF Connect SDK_ provides the _Software Bill of Materials_ tool that allows to create license report for your own project. This hands-on shows how to use the tool.
+
+
 ## Zephyr OS Services
 
 ### Logging
