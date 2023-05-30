@@ -89,7 +89,7 @@ And it can also be used for your own application. We will have a closer look at 
 
 ### Adding Logging example messages
 
-6) Now we are read to create debug outputs in our own application. For test purpose we add the following lines in our main function:
+6) Now we are read to create debug outputs in our own application. For test purposes we replaced the main function with the following:
 
        void main(void)
        {
