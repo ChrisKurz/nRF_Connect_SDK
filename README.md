@@ -55,7 +55,7 @@ Here is a list of available hands-on exercises:
 
 - [BME280](doc/NCSv2.3.0_ZDD_Sensors_BME280_nRF52840.md) - using an nRF52840DK
 
-- [BME280][doc/NCSv2.3.0_ZKS_Threads_BME280.md) - handling sensor in an own Thread
+- [BME280](doc/NCSv2.3.0_ZKS_Threads_BME280.md) - handling sensor in an own Thread
 
 
 ## CMake
