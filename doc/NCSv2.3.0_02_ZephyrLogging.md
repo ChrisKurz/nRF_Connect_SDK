@@ -42,8 +42,8 @@ And it can also be used for your own application. We will have a closer look at 
 
    _prj.conf_
    
-       # Enable Logging
-       CONFIG_LOG=y
+       # keep it empty. We will add later the needed CONFIG symbols.
+
    
    __NOTE: When setting a CONFIG value ensure that there are no spaces around the equal sign!__
    
@@ -61,6 +61,13 @@ And it can also be used for your own application. We will have a closer look at 
 3) Start Visual Studio Code and open the Logging project.
 
 ### Include and register the Zephyr Logging
+
+4) Add Zephyr Logging Software Module to your project by adding following lines in __prj.conf__ file. 
+
+   _prj.conf_
+   
+       # Enable Logging
+       CONFIG_LOG=y
 
 5) We need to include the logging header file to get access to the logging functionality. This is done by adding following line in main.c:
 
