@@ -48,6 +48,14 @@ Here is a list of available hands-on exercises:
 
 - [Getting Zephyr version from application software](doc/NCSv2.3.0_ZKS_Other_01_version.md) - This example shows how to retrieve the version number of Zephyr in an application software. 
 
+
+## Zephyr Device Drivers
+
+### Sensor Device Drivers
+
+- [BME280](doc/NCSv2.3.0_ZDD_Sensors_BME280_nRF52840.md)
+
+
 ## CMake
 
 - [Defining a folder for which all C files are automatically included into your project ](doc/CMake/CMake_01_DefineSourceFolder.md) - Adding all *.c files from your _src_ folder into your project. 
