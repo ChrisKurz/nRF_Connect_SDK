@@ -60,59 +60,31 @@ Creating a project from scratch is quite simple with Zephyr. Here is a descripti
 ## Testing
 
 5) Start Visual Studio Code. 
-6) Open the "nRF Connect for VS Code" page. This can be done by 
-- clicking on __nRF Connect__ icon on the left sidebar. Here you find then the "Open Welcome Page" button. (after a new installation)
-- using the "nRF Connect: Welcome" command available in the Command Palette (Ctrl+Shift+P). 
 
-   ![image](images/01_WelcomePage.jpg)
-
-- or you can also use the __Welcome__ menu in the __nRF Connect__ tab. 
-
-   ![image](images/01_WelcomePage_2.jpg)
-
-7) Click on "Add an existing application to workspace..." and select the __hello_world__ folder. (our project folder is the folder where CMakeLists.txt and prj.conf files are stored.)
+6) Click on "+ Open an existing application" and select the __hello_world__ folder. (our project folder is the folder where CMakeLists.txt and prj.conf files are stored.)
 
    ![image](images/01_AddApplicationToWorkspace.jpg)
 
-8) Before we can work on our project we have to __Add build configuration__. This is done by clicking the folder icon behind our project in the APPLICATIONS section. 
+7) Before we can work on our project we have to __Add build configuration__. This is done by clicking the folder icon behind our project in the APPLICATIONS section. 
 
    ![image](images/01_GenerateConfiguration.jpg)
 
-9) In the __Board__ drop down list enter the board name of your development kit. When you enter the name you should see that the list will be filtered. 
+8) In the __Board__ drop down list enter the board name of your development kit. When you enter the name you should see that the list will be filtered. 
 
    NOTE: Beside the developement kit name, the board name mentions also a chip name. This is done, because smaller devices may be emulated by using bigger devices. For example, the board name "nRF52840DK_nRF52811" shows that the nRF52840DK kit is used to emulate an nRF52811.
-10) Let's use the default settings for the rest. Click __Generate Config__ button.
 
-11) After the project build is completed, check all the available files in the hello_world folder.
+9) Let's use the default settings for the rest. Click __Generate Config__ button.
+
+10) After the project build is completed, check all the available files in the hello_world folder.
 
    ![image](images/01_GeneratedFiles.jpg)
 
-12) Ensure that the connected kit is found and click __Flash__ in the ACTIONS menu. The code download is downloaded to the kit. 
+11) Ensure that the connected kit is found and click __Flash__ in the ACTIONS menu. The code download is downloaded to the kit. 
 
    ![image](images/01_Flash.jpg)
 
-13) Use command Pallete (Ctrl+Shift+P) and enter __nRF Terminal: Start terminal__. 
+12) Open a terminal program (Settings: 115200 baud, 8 data bits, 1 stop bit, no parity, no flow control)
 
-   ![image](images/01_StartTerminal.jpg)
-
-   or click on "Connect to Serial Port in nRF Terminal" button in the CONNECTED DEVICES section.
-
-   ![image](images/01_ConnectToSerialPort.jpg)
-
-14) Further settings are needed for the nRF Terminal:
-
-   - select interface => "Serial Port"
-
-   ![image](images/01_Serial-RTT.jpg)
-
-   - select COM port
-
-   ![image](images/01_ComPort.jpg)
-
-   - serial port settings => select default setting "115200 8n1"
-
-   ![image](images/01_SerialSettings.jpg)
-
-15) reset the kit. The Zephyr boot message and "Hello World" string is shown in the terminal. 
+13) reset the kit. The Zephyr boot message and "Hello World" string is shown in the terminal. 
 
    ![image](images/01_NrfTerminal.jpg)
