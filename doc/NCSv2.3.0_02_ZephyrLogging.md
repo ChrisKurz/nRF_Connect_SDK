@@ -112,12 +112,12 @@ And it can also be used for your own application. We will have a closer look at 
 
 The debug messages can we sent via different interfaces or also called backends. Zephyr allows to select UART or RTT. By default both backends are enabled. Let's try to use the RTT backend. 
 
-9) Open command palette (Ctrl+Shift+P) and enter "nRF Connect: Connect to RTT in nRF Terminal". Instead of using command palette, you can also click the play icon in the CONNECTED DEVICES tab. Note that the play icon behind the serial number and the device name will open nRF Terminal using RTT, while the play icon behind the VCOM line opens nRF Terminal using UART. (move mouse on play icon and wait. Context helpd should open.)
+9) Open command palette (Ctrl+Shift+P) and enter "nRF Connect: Connect to RTT". Instead of using command palette, you can also click the play icon in the CONNECTED DEVICES tab. Note that the play icon behind the serial number and the device name will open nRF Terminal using RTT, while the play icon behind the VCOM line opens nRF Terminal using UART. (move mouse on play icon and wait. Context helpd should open.)
 
-10) After selecting "nRF Connect: Connect to RTT in nRF Terminal" you have to enter a few parameters:
-- "Enter device": use the device name here. There is a certain nomenclature. In case you enter an unknown device name, you will get a list of valid device names. For example, enter "nRF52833_xxAA".
+10) After selecting "nRF Connect: Connect to RTT" you have to enter a few parameters:
+- "Enter device": use the device name here. ThernRFe is a certain nomenclature. In case you enter an unknown device name, you will get a list of valid device names. For example, enter "nRF52840_xxAA".
 - "Enter serial number": this is the number that is shown in the CONNECTED DEVICES tab. You find this number also on the sticker on the board controller of your development kit.
-- "Choose memory address strategy": us "Automatic search" here.
+- "Choose memory address strategy": use "Automatic search" here.
 
 11) Now, the terminal should run and all RTT messages that are sent via Debug Interface are shown. You are seeing messages, because the default setting in your project is enabled UART and RTT. 
 12) Let's change the default settings and do some testing (using UART or RTT for nRF Terminal and enable/disable Logging backends). The Logging backends can be changed by clicking on "Guiconfig". Search for possible "Logging" configs by clicking on "Jumpt to...". Or open directly the folder __Sub Systems and OS Services / Logging / Backends__. Enable/disable the "Enable UART backen" or "Enable Segger J-Link RTT backen". After changing the settings press "Save" button. Note the "Configuration saved to ..." message in the status bar. The settings are stored in the build directory. Take care, because doing a "Pristine build" will erase this folder before it is build again. So using this way means you should only use the "Build" in the ACTIONS tab. 
