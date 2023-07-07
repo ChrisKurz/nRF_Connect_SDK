@@ -2,15 +2,15 @@
 
 In this repository you will find several step-by-step hands-on descriptions showing how to use the Nordic Semiconductor _nRF Connect SDK_. 
 
-All hands-on exercises are based on _nRF Connect SDK_ v2.4.0. (There are also hands-on based on older versions. Check the NCS version numbers, which are mentioned in the appropriate file and folder names.)
+All hands-on exercises are based on _nRF Connect SDK_ v2.3.0. 
 
 Here is a list of available hands-on exercises:
 
 ## Getting started
 
-- [Creating a Project from Scratch](doc/NCSv2.4.0_01_ProjectFromScratch.md) - This hands-on demonstrates how to create a project from scratch.
+- [Creating a Project from Scratch](doc/NCSv2.3.0_01_ProjectFromScratch.md) - This hands-on demonstrates how to create a project from scratch.
 
-- [User-defined KCONFIG symbols](doc/NCSv2.4.0_03_User-Defined_KCONFIG.md) - KCONFIG allows you to add software modules from Zephyr repository or other repositories. But you can also define own KCONFIG symbols. This hands-on demonstrates how this can be done
+- [User-defined KCONFIG symbols](doc/NCSv2.3.0_03_User-Defined_KCONFIG.md) - KCONFIG allows you to add software modules from Zephyr repository or other repositories. But you can also define own KCONFIG symbols. This hands-on demonstrates how this can be done.
 
 - [Generating a License Report](doc/NCSv2.3.0_LicenseReport.md) - _nRF Connect SDK_ provides the _Software Bill of Materials_ tool that allows to create license report for your own project. This hands-on shows how to use the tool.
 
@@ -19,15 +19,15 @@ Here is a list of available hands-on exercises:
 
 ### Logging
 
-- [Adding Zephyr Logging](doc/NCSv2.4.0_02_ZephyrLogging.md) - Here we add Zephyr Logging to our project. This allows us to get debug messages during runtime.
+- [Adding Zephyr Logging](doc/NCSv2.3.0_02_ZephyrLogging.md) - Here we add Zephyr Logging to our project. This allows us to get debug messages during runtime.
 
-- [Zephyr Logging in modules with multiple files](doc/NCSv2.4.0_02_ZephyrLogging_declare.md) - This hands-on shows how to add Logging to a module that consist of multiple files.
+- [Zephyr Logging in modules with multiple files](doc/NCSv2.3.0_02_ZephyrLogging_declare.md) - This hands-on shows how to add Logging to a module that consist of multiple files.
 
-- [Zephyr Logging with minimal Memory Footprint](doc/NCSv2.4.0_02_ZephyrLogging_minimal.md) - This hands-on shows how to optimize memory footprint of Zephyr Logging.
+- [Zephyr Logging with minimal Memory Footprint](doc/NCSv2.3.0_02_ZephyrLogging_minimal.md) - This hands-on shows how to optimize memory footprint of Zephyr Logging.
 
 ### Shell
 
-- [Adding Zephyr Shell](doc/NCSv2.4.0_10_ZephyrShell.md) - Here we add Zephyr Shell to our project. This module is a UNIX-like shell.
+- [Adding Zephyr Shell](doc/NCSv2.3.0_10_ZephyrShell.md) - Here we add Zephyr Shell to our project. This module is a UNIX-like shell.
 
 
 ## Zephyr Kernel Services
