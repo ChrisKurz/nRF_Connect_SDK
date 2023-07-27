@@ -38,7 +38,7 @@ Here is a list of available hands-on exercises:
 
 ### Data Passing
 
-- [Data Passing: FIFOs](doc/NCSv2.3.0_ZKS_02_fifo.md) - This hands-on demonstrates how Zephyr's FIFO handling is done in its kernel.
+- [Data Passing: FIFOs](doc/NCSv2.4.0_ZKS_02_fifo.md) - This hands-on demonstrates how Zephyr's FIFO handling is done in its kernel.
 
 ### Timing
 
