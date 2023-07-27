@@ -65,7 +65,7 @@ Detailed description can be found [here](https://developer.nordicsemi.com/nRF_Co
    
    ![image](images/ZKS_FIFO_01_fifoPut.jpg)
 
-   __NOTE: The user code must ensure that data is removed before new data is inserted. The user code must also take this into account when handling in interrupt service routines. This hands-on example is not taking care about this!__
+   __NOTE: The user code must ensure that data is removed before new data is inserted. The user code must also take this into account when handling in interrupt service routines. This hands-on example is not taking care about this! We assume here that pressing the button will not be done so fast.__
 
    If you now use another variable, e.g. with the name _my_other_data_, and put it into the FIFO via __k_fifo_put()__ function, it would look like this. (But note that this is only a theoretical example here. This was not realized in this hands-on code example).
       
