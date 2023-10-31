@@ -70,4 +70,4 @@ Here is a list of available hands-on exercises:
 
 - [Adding Debug messages in CMakeLists.txt file](doc/CMake/CMake_02_Debugging.md) - Getting some debug messages during build process may help to get a better understanding about what CMake is doing. This course shows how to add debug messages to CMakeLists.txt file.
 
--[only allow build for certain nRF Connect SDK version](doc/CMake/CMake_03_NCS-Version-Check.md) - This example shows how a build process may be stopped in case the predefined _nRF Connect SDK_ version does not fit with the selected one. 
+- [only allow build for certain nRF Connect SDK version](doc/CMake/CMake_03_NCS-Version-Check.md) - This example shows how a build process may be stopped in case the predefined _nRF Connect SDK_ version does not fit with the selected one. 
