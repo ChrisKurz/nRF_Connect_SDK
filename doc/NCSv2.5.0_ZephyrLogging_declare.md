@@ -81,7 +81,7 @@ If the module consists of multiple files, then LOG_MODULE_REGISTER() should appe
 
 10) Use a terminal program on your computer and check the output. Note that some lines are printed after a reset. So you may press the RESET button to see it. 
 
-   ![image](images/02_LoggingDeclare_Terminal.jpg)
+   ![image](images/02_LoggingDeclare_Terminal-2.jpg)
 
    What you can see here is that the same "MyApp" software module is used here as output module and that the log level of the new C file is set differently than in the main file.
    
