@@ -34,7 +34,7 @@ Here is a list of available hands-on exercises:
 
 ### Threads
 
-- [Thread: Creating a Thread](doc/NCSv2.3.0_ZKS_Threads_01.md) - This basic hands-on demonstrates how to create a Thread.
+- [Thread: Creating a Thread](doc/NCSv2.5.0_ZKS_Threads_01.md) - This basic hands-on demonstrates how to create a Thread.
 
 ### Data Passing
 
