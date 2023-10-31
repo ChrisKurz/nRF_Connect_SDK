@@ -50,4 +50,4 @@ So your CMakeLists.txt file should now look like this:
 
 ![](images/03_Terminal_Error.jpg)
 
-6) Change the ExpectedNcsVersion to "2.5.0" and build the project again. Now you only see the message that tells you which NCS version you are using. The build of the project is completely done. 
+6) Change the ExpectedNcsVersion in __CMakeLists.txt__ file to "2.5.0" and build the project again. Now you only see the message that tells you which NCS version you are using. The build of the project is completely done. 
