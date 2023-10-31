@@ -27,5 +27,5 @@ int main(void)
 
     function();
 
-    return 1;
+    return 0;
 }
