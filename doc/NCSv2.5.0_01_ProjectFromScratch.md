@@ -83,7 +83,7 @@ Creating a project from scratch is quite simple with Zephyr. Here is a descripti
 
 11) Ensure that the connected kit is found and click __Flash__ in the ACTIONS menu. The code download is downloaded to the kit. 
 
-   ![image](images/01_Flash.jpg)
+   ![image](images/01_Flash-2.jpg)
 
 12) Open a terminal program, for example the _Serial Terminal_ that is available in _nRF Connect for Desktop_
  
