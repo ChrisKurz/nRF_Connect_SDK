@@ -56,7 +56,7 @@ Creating a project from scratch is quite simple with Zephyr. Here is a descripti
        {
             printk("Hello World!\n");
 
-            return 1;
+            return 0;
        }
 
 ## Testing
