@@ -130,7 +130,7 @@ We have included the driver with the previous steps. Now we will use the driver 
 
 ![](images/ZDD_Sensor_BME280_nRF52840_BuildFlash.jpg)
 
-## Open Terminal and check Output
+### Open Terminal and check Output
 
 9) Open the terminal.
     
