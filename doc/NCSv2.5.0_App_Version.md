@@ -61,3 +61,9 @@ In this hands-on we will use the application version management.
 6) In the terminal you should see following outuput:
 
    ![image](images/App_Version_Terminal.jpg)
+
+Note: You can read the application version and application version number better if you convert them to hexadecimal. 
+
+  16909060 (decimal) = 0x01020304 (hexadecimal)
+
+  66051 (decimal) = 0x010203 (hexadecimal)
