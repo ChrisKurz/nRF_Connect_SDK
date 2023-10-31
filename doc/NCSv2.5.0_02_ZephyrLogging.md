@@ -93,7 +93,7 @@ And it can also be used for your own application. We will have a closer look at 
 
 6) Now we are read to create debug outputs in our own application. For test purposes we replaced the main function with the following:
 
-       void main(void)
+       int main(void)
        {
            printk("Testing Zephyr Logging!\n");
 
@@ -101,6 +101,8 @@ And it can also be used for your own application. We will have a closer look at 
            LOG_ERR("1-ERROR: test");
            LOG_WRN("1-WARNING: test");
            LOG_DBG("1-DEBUG: test");
+
+           return 1;
        }
        
 ## Testing
