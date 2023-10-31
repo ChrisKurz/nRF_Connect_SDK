@@ -79,7 +79,7 @@ Creating a project from scratch is quite simple with Zephyr. Here is a descripti
 
 11) After the project build is completed, check all the available files in the hello_world folder.
 
-   ![image](images/01_GeneratedFiles.jpg)
+   ![image](images/01_GeneratedFiles-2.jpg)
 
 11) Ensure that the connected kit is found and click __Flash__ in the ACTIONS menu. The code download is downloaded to the kit. 
 
