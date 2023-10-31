@@ -69,7 +69,7 @@ Creating a project from scratch is quite simple with Zephyr. Here is a descripti
 
 7) Before we can work on our project we have to __Add build configuration__. This is done by clicking the folder icon behind our project in the APPLICATIONS section. 
 
-   ![image](images/01_GenerateConfiguration.jpg)
+   ![image](images/01_GenerateConfiguration-2.jpg)
 
 8) In the __Board__ drop down list enter the board name of your development kit. When you enter the name you should see that the list will be filtered. 
 
