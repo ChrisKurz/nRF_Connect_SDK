@@ -46,7 +46,11 @@ Here is a list of available hands-on exercises:
 
 ### Other
 
+#### Version
+
 - [Getting Zephyr version from application software](doc/NCSv2.4.0_ZKS_Other_01_version.md) - This example shows how to retrieve the version number of Zephyr in an application software. 
+
+- [Application Firmware Version](doc/NCSv2.5.0_App_Version.md) - Zephyr includes since _nRF Connect SDK v2.5.0_ an application version management. This example shows how to use it.
 
 
 ## Zephyr Device Drivers

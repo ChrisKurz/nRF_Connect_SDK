@@ -1,6 +1,6 @@
 #include <zephyr/kernel.h>
 
-void main(void)
+int main(void)
 {
      printk("Hello World!\n");
 
@@ -10,5 +10,5 @@ void main(void)
 
 
      }
-     
+     return 1;     
 }
