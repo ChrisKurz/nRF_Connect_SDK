@@ -66,17 +66,21 @@ And it can also be used for your own application. We will have a closer look at 
 
 4) Add Zephyr Logging Software Module to your project by adding following lines in __prj.conf__ file. 
 
-   _prj.conf_
+   <sup>_prj.conf_<\sup>
    
        # Enable Logging
        CONFIG_LOG=y
 
 5) We need to include the logging header file to get access to the logging functionality. This is done by adding following line in main.c:
 
+   <sup>_src/main.c_<\sup>
+   
        #include <zephyr/logging/log.h>
        
 5) Before we can use the logging instructions, we have to register the logging for this new software module (the new software module is our own application). This is done by adding following lines before the main function:
 
+   <sup>_src/main.c_<\sup>
+   
        /** LOG MODULE REGISTRATION:
            - First parameter: module name
            - Second Parameter (optional): log level
@@ -91,19 +95,14 @@ And it can also be used for your own application. We will have a closer look at 
 
 ### Adding Logging example messages
 
-6) Now we are read to create debug outputs in our own application. For test purposes we replaced the main function with the following:
+6) Now we are ready to create debug outputs in our own application. For test purposes we add the following lines in main function:
 
-       int main(void)
-       {
-           printk("Testing Zephyr Logging!\n");
+   <sup>_src/main.c_ => add in main() function<\sup>
 
            LOG_INF("1-This is a test");
            LOG_ERR("1-ERROR: test");
            LOG_WRN("1-WARNING: test");
            LOG_DBG("1-DEBUG: test");
-
-           return 1;
-       }
        
 ## Testing
 
