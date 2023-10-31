@@ -67,17 +67,17 @@ Creating a project from scratch is quite simple with Zephyr. Here is a descripti
 
    ![image](images/01_AddApplicationToWorkspace-2.jpg)
 
-7) Before we can work on our project we have to __Add build configuration__. This is done by clicking the folder icon behind our project in the APPLICATIONS section. 
+7) Before we can work on our project we have to __Add build configuration__. This is done by clicking the folder icon behind our project in the APPLICATIONS section. You can also click on the line "+ Create new build configuration" instead of clicking the icon.
 
    ![image](images/01_GenerateConfiguration-2.jpg)
 
-8) In the __Board__ drop down list enter the board name of your development kit. When you enter the name you should see that the list will be filtered. 
+9) In the __Board__ drop down list enter the board name of your development kit. When you enter the name you should see that the list will be filtered. 
 
    NOTE: Beside the developement kit name, the board name mentions also a chip name. This is done, because smaller devices may be emulated by using bigger devices. For example, the board name "nRF52840DK_nRF52811" shows that the nRF52840DK kit is used to emulate an nRF52811.
 
-9) Let's use the default settings for the rest. Click __Generate Config__ button.
+10) Let's use the default settings for the rest. Click __Generate Config__ button.
 
-10) After the project build is completed, check all the available files in the hello_world folder.
+11) After the project build is completed, check all the available files in the hello_world folder.
 
    ![image](images/01_GeneratedFiles.jpg)
 
