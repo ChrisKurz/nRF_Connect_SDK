@@ -1,4 +1,4 @@
-<sup>SDK version: NCS v2.5.0  -  Link to Hands-on solution: TBD</sup>
+<sup>SDK version: NCS v2.5.0  -  Link to Hands-on solution: https://github.com/ChrisKurz/nRF_Connect_SDK/tree/main/Workspace/NCSv2.5.0/ZKS_Threads_create</sup>
 
 # Zephyr Kernel Services - Threads
 
@@ -122,6 +122,6 @@ In case the thread can be created during OS initialization, then using the K_THR
 
 12) Download the project to the connect nRF52 development board. Use a terminal program to check the debug ouptut. You should see something like this:
 
-   ![image](images/ZKS_Thread_Testing.jpg)
+   ![image](images/ZKS_Thread_Testing-2.jpg)
    
    Thread 1 is printing each second, while Thread 2 is printing each 700 ms. That's why Thread 2 is sometimes output twice in a row. 
