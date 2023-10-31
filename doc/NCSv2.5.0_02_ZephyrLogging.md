@@ -53,9 +53,9 @@ And it can also be used for your own application. We will have a closer look at 
 
        int main(void)
        {
-	         printk("Testing Zephyr Logging!\n");
+           printk("Testing Zephyr Logging!\n");
 
-           return 1;
+           return 0;
        }
   
   Note: The Zephyr Logging software module was added to the project by enabling CONFIG_LOG. The next steps are to enable the logging in our application software.
