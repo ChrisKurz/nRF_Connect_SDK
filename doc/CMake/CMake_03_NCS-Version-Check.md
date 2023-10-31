@@ -48,7 +48,7 @@ So your CMakeLists.txt file should now look like this:
 
 ## Testing
 
-5) Now build your project. You should see in the terminal the error message.
+5) Now build your project. In my test case I selected nRF Connect SDK Version 2.5.0 in Visual Studio Code. Then you should see in the terminal the error message.
 
 ![](images/03_Terminal_Error.jpg)
 
