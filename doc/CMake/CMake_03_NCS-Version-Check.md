@@ -1,3 +1,5 @@
+<sup>SDK version: NCS v2.5.0  -  Link to Hands-on solution: https://github.com/ChrisKurz/nRF_Connect_SDK/tree/main/Workspace/NCSv2.5.0/CMake/CMake_03_NcsVersion</sup>
+
 # CMake: Checking _nRF Connect SDK_ Version in CMake
 
 ## Introduction
