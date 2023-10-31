@@ -13,8 +13,5 @@ int main(void)
      printk("Application version string (VERSION_MAJOR.VERSION_MINOR.PATCHLEVEL.EXTRAVERSION): %s\n", APP_VERSION_STRING);
      // APP_BUILD_VERSION is not used here. 
 
-     while(1){
-
-     }
-     return 1;
+     return 0;
 }
