@@ -65,7 +65,7 @@ Creating a project from scratch is quite simple with Zephyr. Here is a descripti
 
 6) Click on "+ Open an existing application" and select the __hello_world__ folder. (our project folder is the folder where CMakeLists.txt and prj.conf files are stored.)
 
-   ![image](images/01_AddApplicationToWorkspace.jpg)
+   ![image](images/01_AddApplicationToWorkspace-2.jpg)
 
 7) Before we can work on our project we have to __Add build configuration__. This is done by clicking the folder icon behind our project in the APPLICATIONS section. 
 
