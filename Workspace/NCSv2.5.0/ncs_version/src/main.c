@@ -11,19 +11,5 @@ int main(void)
      printk("nRF Connect SDK version Patchlevel (NCS_PATCHLEVEL): %i\n", NCS_PATCHLEVEL);
      printk("nRF Connect SDK version string (NCS_VERSION_MAJOR.NCS_VERSION_MINOR.NCS_PATCHLEVEL): %s\n", NCS_VERSION_STRING);
 
-     while(1){
-
-     }
-     return 1;
+     return 0;
 }
-
-
-#define NCSVERSION          
-#define NCS_VERSION_NUMBER  0x20500
-#define NCS_VERSION_MAJOR   2
-#define NCS_VERSION_MINOR   5
-#define NCS_PATCHLEVEL      0
-#define NCS_VERSION_STRING  "2.5.0"
-
-#define NCS_BUILD_VERSION v2.5.0
-#define BANNER_VERSION STRINGIFY(NCS_BUILD_VERSION)
