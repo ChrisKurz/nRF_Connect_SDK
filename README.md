@@ -21,7 +21,7 @@ Here is a list of available hands-on exercises:
 
 - [Adding Zephyr Logging](doc/NCSv2.5.0_02_ZephyrLogging.md) - Here we add Zephyr Logging to our project. This allows us to get debug messages during runtime.
 
-- [Zephyr Logging in modules with multiple files](doc/NCSv2.4.0_02_ZephyrLogging_declare.md) - This hands-on shows how to add Logging to a module that consist of multiple files.
+- [Zephyr Logging in modules with multiple files](doc/NCSv2.5.0_02_ZephyrLogging_declare.md) - This hands-on shows how to add Logging to a module that consist of multiple files.
 
 - [Zephyr Logging with minimal Memory Footprint](doc/NCSv2.4.0_02_ZephyrLogging_minimal.md) - This hands-on shows how to optimize memory footprint of Zephyr Logging.
 
