@@ -23,5 +23,5 @@ int main(void)
     LOG_WRN("1-WARNING: test");
     LOG_DBG("1-DEBUG: test");
 
-    return 1;
+    return 0;
 }
