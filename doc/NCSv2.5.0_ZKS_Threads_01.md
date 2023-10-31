@@ -16,12 +16,18 @@ This example demonstrates how to create threads. There are two ways to create a 
 
 1) Create a new project based on Zephyr's _hello_world_ example (./zephyr/samples/hello_world).
 
+2) The Zephyr _hello_world_ example does not include the __zephyr/kernel.h__ header file. We add this include in the main.c file:
+
+   <sup>_src/main.c_ </sup>
+
+       #include <zephyr/kernel.h>
+
 
 ### Create first Thread (myThread1)
 
 Here we will create an new thread during runtime. This way may be used to create a new thread during application code execution. 
 
-2) Create the Thread by adding following lines in the main() function:
+3) Create the Thread by adding following lines in the main() function:
 
    <sup>_src/main.c_ => main() function</sup>
    
@@ -35,13 +41,13 @@ Here we will create an new thread during runtime. This way may be used to create
                   0,                  /* Thread options                              */
                   K_NO_WAIT);         /* Scheduling delay (K_NO_WAIT for no delay)   */
 
-3) Some of these parameters have to be defined now. Let's start with _my_thread_data_. Here we have to define a Variable based on __k_thread__ type. 
+4) Some of these parameters have to be defined now. Let's start with _my_thread_data_. Here we have to define a Variable based on __k_thread__ type. 
 
    <sup>_src/main.c_</sup>
 
        struct k_thread myThread1_data;
 
-4) Beside this, we also have to define the stack area for the thread. 
+5) Beside this, we also have to define the stack area for the thread. 
 
    <sup>_src/main.c_</sup>
 
@@ -49,7 +55,7 @@ Here we will create an new thread during runtime. This way may be used to create
 
        K_THREAD_STACK_DEFINE(mythread1_stack_area, MYTHREAD1_STACK_SIZE);
 
-5) The code that is processed with respect to this thread is written in a function. When creating the thread, the entry point address of this function is given. 
+6) The code that is processed with respect to this thread is written in a function. When creating the thread, the entry point address of this function is given. 
 
    <sup>_src/main.c_</sup>
 
@@ -61,7 +67,7 @@ Here we will create an new thread during runtime. This way may be used to create
            }
        }
 
-6) And finally, the thread priority has to be defined.
+7) And finally, the thread priority has to be defined.
 
    <sup>_src/main.c_</sup>
 
@@ -72,7 +78,7 @@ Here we will create an new thread during runtime. This way may be used to create
 
 In case the thread can be created during OS initialization, then using the K_THREAD_DEFINE() macro is another possibility to create a thread. 
 
-7) Create the Thread by adding following lines in the main() function:
+8) Create the Thread by adding following lines in the main() function:
 
    <sup>_src/main.c_</sup>
 
@@ -85,13 +91,13 @@ In case the thread can be created during OS initialization, then using the K_THR
                   0,                  /* Thread options                              */
                   0);                 /* Scheduling delay (0 for no delay)           */
 
-8) We have to define here also the stack size.
+9) We have to define here also the stack size.
 
    <sup>_src/main.c_</sup>
 
        #define MYTHREAD2_STACK_SIZE 500
 
-9) Let's define the Thread function. 
+10) Let's define the Thread function. 
 
    <sup>_src/main.c_</sup> 
 
@@ -103,7 +109,7 @@ In case the thread can be created during OS initialization, then using the K_THR
            }
        }
 
-10) And finally, define the Thread priority. 
+11) And finally, define the Thread priority. 
 
    <sup>_src/main.c_</sup>
 
@@ -114,7 +120,7 @@ In case the thread can be created during OS initialization, then using the K_THR
 
 ## Testing
 
-11) Download the project to the connect nRF52 development board. Use a terminal program to check the debug ouptut. You should see something like this:
+12) Download the project to the connect nRF52 development board. Use a terminal program to check the debug ouptut. You should see something like this:
 
    ![image](images/ZKS_Thread_Testing.jpg)
    
