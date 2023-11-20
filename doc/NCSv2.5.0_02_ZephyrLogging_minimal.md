@@ -6,7 +6,7 @@
 
 Zephyr Logging helps a lot when debugging during runtime is needed. However, it also requires a lot of memory resources. Since all the debug messages has to be stored in the code, the memory footprint is much bigger in larger projects. 
 
-Here is a simple comparison of a really simple project. I have used the [Zehpyr Logging]() hands-on example and modified the code in different ways. 
+Here is a simple comparison of a really simple project. I have used the [Zehpyr Logging](https://github.com/ChrisKurz/nRF_Connect_SDK/blob/main/doc/NCSv2.5.0_02_ZephyrLogging.md) hands-on example and modified the code in different ways. 
 
 1) Original Memory Footprint of the Zephyr Logging example:
 
