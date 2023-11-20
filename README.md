@@ -69,3 +69,5 @@ Here is a list of available hands-on exercises:
 - [Defining a folder for which all C files are automatically included into your project ](doc/CMake/CMake_01_DefineSourceFolder.md) - Adding all *.c files from your _src_ folder into your project. 
 
 - [Adding Debug messages in CMakeLists.txt file](doc/CMake/CMake_02_Debugging.md) - Getting some debug messages during build process may help to get a better understanding about what CMake is doing. This course shows how to add debug messages to CMakeLists.txt file.
+
+- [Only allow build for user defined nRF Connect SDK version](doc/CMake/CMake_03_NCS-Version-Check.md) - This example shows how a build process may be stopped in case the predefined _nRF Connect SDK_ version does not fit with the selected one. 

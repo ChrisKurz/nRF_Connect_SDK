@@ -1,3 +1,5 @@
+<sup>SDK version: NCS v2.5.0  -  Link to Hands-on solution: https://github.com/ChrisKurz/nRF_Connect_SDK/tree/main/Workspace/NCSv2.5.0/CMake/CMake_03_NcsVersion</sup>
+
 # CMake: Checking _nRF Connect SDK_ Version in CMake
 
 ## Introduction
@@ -46,8 +48,8 @@ So your CMakeLists.txt file should now look like this:
 
 ## Testing
 
-5) Now build your project. You should see in the terminal the error message.
+5) Now build your project. In my test case I selected nRF Connect SDK Version 2.5.0 in Visual Studio Code. Then you should see in the terminal the error message.
 
 ![](images/03_Terminal_Error.jpg)
 
-6) Change the ExpectedNcsVersion to "2.5.0" and build the project again. Now you only see the message that tells you which NCS version you are using. The build of the project is completely done. 
+6) Change the ExpectedNcsVersion in __CMakeLists.txt__ file to "2.5.0" and build the project again. Now you only see the message that tells you which NCS version you are using. The build of the project is completely done. 
