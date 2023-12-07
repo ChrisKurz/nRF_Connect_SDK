@@ -123,9 +123,9 @@ In the step 4, we defined the hardware usage for the BME280 sensor. We need to u
 
 12)  We use the functions __sensor_sample_fetch__ and __sensor_channel_get__ to trigger a measurement and read the conversion results. The use of these functions requires their declaration. This is done in the header file __sensor.h__. We must therefore include them in our project. Insert following line at the beginning of the main.c file:
 
-   <sup>_src/main.c_ </sup>
+  <sup>_src/main.c_ </sup>
     
-       #include <zephyr/drivers/sensor.h>
+    #include <zephyr/drivers/sensor.h>
 
 13) The measurement results of the sensor are saved in a structure. We insert the definition at the beginning of the function _void Thread_BME280(...)_. 
 
