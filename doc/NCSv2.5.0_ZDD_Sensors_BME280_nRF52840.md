@@ -1,43 +1,43 @@
 <sup>SDK version: NCS v2.5.0; Board: nRF52840DK; Directory with Solution: TBD</sup>
 
-# Zephyr Device Driver: Adding BME280 Sensor Driver to a nRF52480 Project
+# Zephyr Device Driver: Adding BME280 Sensor Driver to an nRF52480 Project
 
-## Introduction
+There are a large of drivers in the Zephyr RTOS. In this hands-on exercise, we will take a closer look at the Sensor Drivers, specifically the BME280 sensor driver.
 
-There are plenty of drivers in the Zephyr RTOS. In this hands-on session we will take a closer look at the Sensor Drivers; specifically the BME280 sensor driver.
+## Required Hardware and Software
+- [nRF52840DK development kit](https://www.nordicsemi.com/Products/Development-hardware/nRF52840-DK)
+- BME280 board (e.g. from [DigiKey](https://www.digikey.de/de/products/detail/pimoroni-ltd/PIM472/10329004?utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=PMax:%20Smart%20Shopping_Product_Zombie%20SKUs&utm_term=&productid=10329004&utm_content=&utm_id=go_cmp-18521752285_adg-_ad-__dev-c_ext-_prd-10329004_sig-CjwKCAiA1MCrBhAoEiwAC2d64UWWHbkjNYi9l8UAy99278xOGrYvVKB7msImOtXb-atsvhYavEF5iRoCC3MQAvD_BwE&gad_source=4&gclid=CjwKCAiA1MCrBhAoEiwAC2d64UWWHbkjNYi9l8UAy99278xOGrYvVKB7msImOtXb-atsvhYavEF5iRoCC3MQAvD_BwE) or [Mouser](https://www.mouser.de/ProductDetail/Pimoroni/PIM472?qs=P1JMDcb91o7p2TYl00AP7g%3D%3D&mgh=1&vip=1&gad_source=1&gclid=CjwKCAiA1MCrBhAoEiwAC2d64cqZCSacTMr-zg7ERu2WAsZ_KyYkPN1RFyjCxMJVKIW8GwCHrWX-vxoCImUQAvD_BwE))
+- Cable (e.g. from [DigiKey](https://www.digikey.de/de/products/detail/sparkfun-electronics/PRT-09140/5993845) or [Mouser](https://www.mouser.de/ProductDetail/SparkFun/PRT-09140?qs=WyAARYrbSnadDqOX3IDrug%3D%3D))
+- install the _nRF Connect SDK_ v2.5.0 and _Visual Studio Code_. The description of the installation can be found [here](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.5.0/nrf/getting_started/assistant.html#).
 
-## Required Hardware/Software
-- one nRF52 development kit (e.g. nRF52DK, nRF52833DK, or nRF52840DK)
-- BME280 breakout board (e.g. https://www.digikey.de/de/products/detail/pimoroni-ltd/PIM472/10329004)
-- install the _nRF Connect SDK_ v2.4.0 and _Visual Studio Code_. The description of the installation can be found [here](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.4.0/nrf/getting_started/assistant.html#).
 
 ## Hands-on step-by-step description 
 
-### Connect the BME280 Breakout Board to the nRF52840DK
+### Connecting the BME280 Breakout Board to the nRF52840DK
 
-1) First, please connect the BME280 Breakout Board to nRF52840DK as shown in the next picutre:
+1) First connect the BME280 Breakout Board to the nRF52840DK as shown in the next picutre:
 
-    ![](images/ZDD_Sensor_BME280Board_nRF52840DK.jpg)
+    ![image not found](images/ZDD_Sensor_BME280_nRF52840DK_NCSv2.5.0.jpg)
 
 ### Create your own Project based on _hello_world_ Example
 
 2) Create a new project based on Zephyr's _hello_world_ example (./zephyr/samples/hello_world).
 
-3) The Zephyr _hello_world_ example does not include the __zephyr/kernel.h__ header file. We add this include in the main.c file:
+3) The Zephyr _hello_world_ example does not include the __zephyr/kernel.h__ header file. We include this header file in the main.c file:
 
    <sup>_src/main.c_ </sup>
 
        #include <zephyr/kernel.h>
-   
-### DeviceTree: Define Hardware Usage in DeviceTree Files
 
-4) Let's define the BME280 sensor as well as the used pins in an DeviceTree Overlay file. The Overlay file allows to overwrite definitions that are done in the pre-defined __nRF52840DK_nRF52840.dts__ board file. We will use the Arduino Shield I2C definition and modify it as described in the following text. 
+### Definition of Hardware Usage in DeviceTree Files
+
+4) Let us now configure the BME280 sensor driver in an DeviceTree Overlay file. The Overlay file allows us to overwrite definitions made in the pre-defined board file __nRF52840DK_nRF52840.dts__. We will use the I2C definition of the Arduino Shield and modify it as described in the following text. 
  
-    Create in your project folder the file __nRF52840DK_nRF52840.overlay__ file. (IMPORTANT: ensure to use exactly this name, because with this name we overwrite the __nRF52840DK_nRF52840.dts__ file!)
+    Create the file __nRF52840DK_nRF52840.overlay__ in the folder __C:/MyWorkspace/MyProject__. (IMPORTANT: Make sure you use exactly this name, as we will overwrite the file __nRF52840DK_nRF52840.dts__ with this name!)
 
     Then add following content to this file:
 
-    <sup>_nRF52840DK_nRF52840.overlay_ </sup>
+    <sup>_nRF52840DK_nRF52840.overlay_</sup>
     
        /* Configuration of a BME280 device on an Arduino I2C bus.
           -------------------------------------------------------
@@ -56,11 +56,11 @@ There are plenty of drivers in the Zephyr RTOS. In this hands-on session we will
 
 
 ### Using the DeviceTree Definitions in our C-Code
-In the previous step we defined the Hardware usage for the BME280 sensor. Now, we have to use these definitions in our C-code. This is done by following steps:
+In the previous step, we defined the hardware usage for the BME280 sensor. Now we need to use these definitions in our C code. This is done in the following steps:
 
-3) Get the device structure from the DeviceTree node with compatible "bosch,bme280". This is done by adding following line in main function:
+5) Get the device structure from the DeviceTree node with the compatible "bosch,bme280". This is done by adding following line in main function:
 
-    <sup>_src/main.c_ - in __void main(void)__ function </sup>
+    <sup>_src/main.c_ - add following lines in __void main(void)__ function </sup>
     
            const struct device *dev = DEVICE_DT_GET_ANY(bosch_bme280);
            if (dev==NULL){
@@ -71,21 +71,21 @@ In the previous step we defined the Hardware usage for the BME280 sensor. Now, w
                return;
            }
 
-    We use the __DEVICE_DT_GET_ANY__ macro here. This is a DeviceTree macro and it is defined in the __device.h__ header file. So we have to include this header file into our project. Add following line in __main.c__ file
+6) We use the __DEVICE_DT_GET_ANY__ macro here. This is a DeviceTree macro and is defined in the header file __device.h__. We must therefore include this header file in our project. Add the following line to the __main.c__ file
 
     <sup>_src/main.c_ </sup>
     
        #include <zephyr/device.h>
 
-### KCONFIG: Adding BME280 Sensor Driver to Our Project
+### KCONFIG: Adding the BME280 Sensor Driver to our Project
 
-4) The required Software Modules can be added to our project by setting the appropriate CONFIG symbols (KCONFIG). Let's think about which software modules are needed:
-    > - I2C: The BME280 itself supports I2C and SPI interface. Howwever, the breakout board is done in a way that only I2C is used. 
+7) The required software modules can be added to our project by setting the corresponding CONFIG symbols (KCONFIG). Let's consider which software modules are needed:
+    > - I2C: The BME280 itself supports I2C and SPI interfaces. Howwever, the breakout board is designed so that only I2C is used. 
     > - Sensor: Include the sensor drivers to get access to the BME280 sensor driver. 
 
-   So to enable these modules we have to add following lines to the __prj.conf__ file.
+   To enable these modules, we need to add following lines to the __prj.conf__ file.
     
-   <sup>_prj.conf_ </sup>
+   <sup>_prj.conf_</sup>
     
        # Enable Software Modules for BME280 Sensor Driver Usage
        CONFIG_I2C=y
@@ -94,9 +94,9 @@ In the previous step we defined the Hardware usage for the BME280 sensor. Now, w
 ### Using the BME280 Sensor Driver in our own Application
 We have included the driver with the previous steps. Now we will use the driver in our own Application software. 
 
-5) We keep our software quite simple and handle the sensor measurements in the main entire loop. So add following lines in the main function:
+8) We keep our software quite simple and handle the sensor measurements in the main entire loop. So insert following lines into the main function:
 
-    <sup>_src/main.c_ - in __void main(void)__ function </sup>
+    <sup>_src/main.c_ - add following lines in __void main(void)__ function </sup>
     
            while(1){
                struct sensor_value temp, press, humidity;
@@ -113,27 +113,36 @@ We have included the driver with the previous steps. Now we will use the driver 
                k_sleep(K_MSEC(1000));                
            }
 
-6) We are using the functions __sensor_sample_fetch__ and __sensor_channel_get__ to trigger a measurement and read the conversion results. Usage of these functions requires its declaration. This is done in the __sensor.h__ header file. So we have to include it in our project. Add following line on top of our main.c file:
+9) We use the functions __sensor_sample_fetch__ and __sensor_channel_get__ to trigger a measurement and read the conversion results. The use of these functions requires their declaration. This is done in the header file __sensor.h__. We must therefore include them in our project. Insert following line at the beginning of the main.c file:
 
-    <sup>_src/main.c_</sup>
+    <sup>_src/main.c_ </sup>
     
        #include <zephyr/drivers/sensor.h>
 
 
 ## Testing
 
-### Build the project and Download to Development Kit
+### Build the Project and Download to the Development Kit
 
-7) Click the "Build" button in the ACTIONS menu. 
+10) Click on the "Build" button in the ACTIONS menu. 
 
-8) Make sure that the connected kit is found and click __Flash__ in the ACTIONS menu. The code will now be downloaded to the kit. 
+11) Make sure that the connected kit has been found and click on __Flash__ in the ACTIONS menu. The code will now be downloaded to the kit. 
 
-![](images/ZDD_Sensor_BME280_nRF52840_BuildFlash.jpg)
+![image not found](images/ZDD_Sensor_BME280_nRF52840_BuildFlash.jpg)
+
 
 ### Open Terminal and check Output
 
-9) Open the terminal.
-    
-10) Reset the kit by pressing the Reset button on the board. The Zephyr boot message will be displayed in the terminal, followed by an optional application start output and the measurement results. 
+12) Open the terminal. We recommend using the _Serial Terminal_ from Nordic, which can be found in the _Connect for Desktop_ application. With this terminal, the default setting can be used and the received data should be output immediately after a connection. 
 
-    ![](images/ZDD_Sensor_BME280_nRF52840_NrfTerminal.jpg)
+       In case another terminal program is used, here are the necessary settings: 
+
+       - Baud Rate: 115200 
+       - Data bits: 8
+       - Stop bits: 1
+       - Parity:    none
+       - Flow control: off
+    
+13) Reset the kit by pressing the Reset button on the board. The Zephyr boot message is displayed in the terminal, followed by an optional application startup output and the measurement results. 
+
+    ![image not found](images/ZDD_Sensor_BME280_nRF52840_NrfTerminal.jpg)
