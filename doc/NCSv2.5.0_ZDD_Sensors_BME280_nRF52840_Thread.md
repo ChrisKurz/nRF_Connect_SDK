@@ -1,4 +1,4 @@
-<sup>SDK version: NCS v2.5.0  -  Link to Hands-on solution: TBD</sup>
+<sup>SDK version: NCS v2.5.0  -  Link to Hands-on solution: https://github.com/ChrisKurz/nRF_Connect_SDK/tree/main/Workspace/NCSv2.5.0/ZDD_BME280_Thread</sup>
 
 # Zephyr Device Driver: Adding BME280 Sensor Driver to an nRF52840 Project as a Thread
 
