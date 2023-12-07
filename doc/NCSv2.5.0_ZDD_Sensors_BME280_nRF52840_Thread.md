@@ -57,11 +57,26 @@ There are a large number of drivers in the Zephyr RTOS. In this hands-on exercis
        };
 
 
+### KCONFIG: Adding the BME280 Sensor Driver to our Project
+
+5) The required software modules can be added to our project by setting the corresponding CONFIG symbols (KCONFIG). Let's consider which software modules are needed:
+    > - I2C: The BME280 itself supports I2C and SPI interfaces. Howwever, the breakout board is designed so that only I2C is used. 
+    > - Sensor: Include the sensor drivers to get access to the BME280 sensor driver. 
+
+   To enable these modules, we need to add following lines to the __prj.conf__ file.
+    
+   <sup>_prj.conf_</sup>
+    
+       # Enable Software Modules for BME280 Sensor Driver Usage
+       CONFIG_I2C=y
+       CONFIG_SENSOR=y
+
+    
 ### Create a new Thread for the Sensor Handling
 
 In the previous exercise we did the sensor handling in the main function. For a real project it makes more sense to do this in a separate thread. 
 
-5) Create a new Thread for the sensor hanlding. Insert the following lines before the main loop. 
+6) Create a new Thread for the sensor hanlding. Insert the following lines before the main loop. 
 
    <sup>_src/main.c_</sup>
 
@@ -74,19 +89,19 @@ In the previous exercise we did the sensor handling in the main function. For a 
                   0,                   /* Thread options                              */
                   0);                  /* Scheduling delay (0 for no delay)           */
 
-6) The creation of the Thread uses the parameter MYTHREAD_STACK_SIZE, which must now be defined. Insert the definition before the K_THREAD_DEFINE() macro. 
+7) The creation of the Thread uses the parameter MYTHREAD_STACK_SIZE, which must now be defined. Insert the definition before the K_THREAD_DEFINE() macro. 
 
    <sup>_src/main.c_</sup>
 
        #define MYTHREAD_STACK_SIZE 500
 
-7) Another parameter is MYTHREAD_PRIORTIY. We have to define it by insterting following line.
+8) Another parameter is MYTHREAD_PRIORTIY. We have to define it by insterting following line.
 
    <sup>_src/main.c_</sup>
 
        #define MYTHREAD_PRIORITY 5
 
-8) The new thread calls the _Thread_BME280_ function. We now have to create this as well. Insert the following lines before the macro K_THREAD_DEFINE.
+9) The new thread calls the _Thread_BME280_ function. We now have to create this as well. Insert the following lines before the macro K_THREAD_DEFINE.
 
    <sup>_src/main.c_</sup>
 
@@ -99,7 +114,7 @@ In the previous exercise we did the sensor handling in the main function. For a 
 ### Using the DeviceTree Definitions in our C-Code
 In the step 4, we defined the hardware usage for the BME280 sensor. We need to use these definitions in our C code. This is done in the following steps:
 
-9) Get the device structure from the DeviceTree node with the compatible "bosch,bme280". This is done by adding following line in main function:
+10) Get the device structure from the DeviceTree node with the compatible "bosch,bme280". This is done by adding following line in main function:
 
     <sup>_src/main.c_ - add following lines in __void Thread_BME280(...)__ function </sup>
     
