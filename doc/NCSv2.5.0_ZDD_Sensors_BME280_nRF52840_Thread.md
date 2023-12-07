@@ -116,7 +116,7 @@ In the step 4, we defined the hardware usage for the BME280 sensor. We need to u
 
     <sup>_src/main.c_ </sup>
     
-       #include <zephyr/device.h>
+        #include <zephyr/device.h>
 
 
 ### Using the Sensor
