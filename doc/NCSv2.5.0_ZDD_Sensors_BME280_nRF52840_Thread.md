@@ -123,17 +123,17 @@ In the step 4, we defined the hardware usage for the BME280 sensor. We need to u
 
 12)  We use the functions __sensor_sample_fetch__ and __sensor_channel_get__ to trigger a measurement and read the conversion results. The use of these functions requires their declaration. This is done in the header file __sensor.h__. We must therefore include them in our project. Insert following line at the beginning of the main.c file:
 
-    <sup>_src/main.c_ </sup>
+   <sup>_src/main.c_ </sup>
     
        #include <zephyr/drivers/sensor.h>
 
-11) The measurement results of the sensor are saved in a structure. We insert the definition at the beginning of the function _void Thread_BME280(...)_. 
+13) The measurement results of the sensor are saved in a structure. We insert the definition at the beginning of the function _void Thread_BME280(...)_. 
 
     <sup>_src/main.c_ - add following lines in __void Thread_BME280(...)__ function </sup>
 
             struct sensor_value temp, press, humidity;
 
-12) First, the application instructs the driver to fetch a sample of all its channels. This is done within an entire loop, because the Sensor thread should not terminate.
+14) First, the application instructs the driver to fetch a sample of all its channels. This is done within an entire loop, because the Sensor thread should not terminate.
 
     <sup>_src/main.c_ - add following lines in __void Thread_BME280(...)__ function </sup>
 
@@ -143,7 +143,7 @@ In the step 4, we defined the hardware usage for the BME280 sensor. We need to u
     
             }
 
-13) Then, individual channels may be read. These instruction should be placed after the _sensor_sample_fetch()_ function call.
+15) Then, individual channels may be read. These instruction should be placed after the _sensor_sample_fetch()_ function call.
 
     <sup>_src/main.c_ - add following lines in __void Thread_BME280(...)__ function </sup>
 
@@ -151,7 +151,7 @@ In the step 4, we defined the hardware usage for the BME280 sensor. We need to u
                 sensor_channel_get(dev, SENSOR_CHAN_PRESS, &press);
                 sensor_channel_get(dev, SENSOR_CHAN_HUMIDITY, &humidity);
 
-14) In our project we output the measurement results in a terminal.
+16) In our project we output the measurement results in a terminal.
 
     <sup>_src/main.c_ - add following lines in __void Thread_BME280(...)__ function </sup>
     
@@ -159,7 +159,7 @@ In the step 4, we defined the hardware usage for the BME280 sensor. We need to u
                         temp.val1, temp.val2, press.val1, press.val2,
                         humidity.val1, humidity.val2);
 
-15) And finally we define the measurement period. In our example, a measurement should be triggered every second. This is realized here by simply putting the thread to sleep for this time.
+17) And finally we define the measurement period. In our example, a measurement should be triggered every second. This is realized here by simply putting the thread to sleep for this time.
 
     <sup>_src/main.c_ - add following lines in __void Thread_BME280(...)__ function </sup>
 
@@ -169,6 +169,6 @@ In the step 4, we defined the hardware usage for the BME280 sensor. We need to u
 
 ## Testing
 
-16) Download the project to the connect nRF52840DK board. Use a terminal program to check the debug ouptut. You should see something like this:
+18) Download the project to the connect nRF52840DK board. Use a terminal program to check the debug ouptut. You should see something like this:
 
    ![image](images/ZDD_BME280_Thread_Testing.jpg)
