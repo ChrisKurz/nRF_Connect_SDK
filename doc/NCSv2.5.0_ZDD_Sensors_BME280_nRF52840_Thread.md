@@ -131,27 +131,27 @@ In the step 4, we defined the hardware usage for the BME280 sensor. We need to u
 
     <sup>_src/main.c_ - add following lines in __void Thread_BME280(...)__ function </sup>
 
-           /* Initialization done. Now sensor handling can be done in following entire loop. */
-           while (1){
-               sensor_sample_fetch(dev);
+            /* Initialization done. Now sensor handling can be done in following entire loop. */
+            while (1){
+                sensor_sample_fetch(dev);
     
-           }
+            }
 
 13) Then, individual channels may be read. These instruction should be placed after the _sensor_sample_fetch()_ function call.
 
     <sup>_src/main.c_ - add following lines in __void Thread_BME280(...)__ function </sup>
 
-               sensor_channel_get(dev, SENSOR_CHAN_AMBIENT_TEMP, &temp);
-               sensor_channel_get(dev, SENSOR_CHAN_PRESS, &press);
-               sensor_channel_get(dev, SENSOR_CHAN_HUMIDITY, &humidity);
+                sensor_channel_get(dev, SENSOR_CHAN_AMBIENT_TEMP, &temp);
+                sensor_channel_get(dev, SENSOR_CHAN_PRESS, &press);
+                sensor_channel_get(dev, SENSOR_CHAN_HUMIDITY, &humidity);
          
 14) In our project we output the measurement results in a terminal.
 
     <sup>_src/main.c_ - add following lines in __void Thread_BME280(...)__ function </sup>
     
-               printk("temp: %d.%06d; press: %d.%06d; humidity: %d.%06d\n",
-                       temp.val1, temp.val2, press.val1, press.val2,
-                       humidity.val1, humidity.val2);
+                printk("temp: %d.%06d; press: %d.%06d; humidity: %d.%06d\n",
+                        temp.val1, temp.val2, press.val1, press.val2,
+                        humidity.val1, humidity.val2);
 
 15) And finally we define the measurement period. In our example, a measurement should be triggered every second. This is realized here by simply putting the thread to sleep for this time.
 
