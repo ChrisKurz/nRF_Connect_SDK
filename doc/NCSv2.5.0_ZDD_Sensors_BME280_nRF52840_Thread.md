@@ -157,7 +157,7 @@ In the step 4, we defined the hardware usage for the BME280 sensor. We need to u
 
     <sup>_src/main.c_ - add following lines in __void Thread_BME280(...)__ function </sup>
 
-               k_sleep(K_MSEC(1000)); 
+                k_sleep(K_MSEC(1000)); 
 
 
 
