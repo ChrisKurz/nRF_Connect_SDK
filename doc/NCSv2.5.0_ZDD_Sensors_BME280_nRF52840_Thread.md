@@ -125,7 +125,7 @@ In the step 4, we defined the hardware usage for the BME280 sensor. We need to u
 
     <sup>_src/main.c_ - add following lines in __void Thread_BME280(...)__ function </sup>
 
-           struct sensor_value temp, press, humidity;
+            struct sensor_value temp, press, humidity;
 
 12) First, the application instructs the driver to fetch a sample of all its channels. This is done within an entire loop, because the Sensor thread should not terminate.
 
