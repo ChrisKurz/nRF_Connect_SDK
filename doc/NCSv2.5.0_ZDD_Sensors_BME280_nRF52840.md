@@ -33,7 +33,7 @@ There are a large of drivers in the Zephyr RTOS. In this hands-on exercise, we w
 
 4) Let us now configure the BME280 sensor driver in an DeviceTree Overlay file. The Overlay file allows us to overwrite definitions made in the pre-defined board file __nRF52840DK_nRF52840.dts__. We will use the I2C definition of the Arduino Shield and modify it as described in the following text. 
  
-    Create the file __nRF52840DK_nRF52840.overlay__ in the folder __C:/MyWorkspace/MyProject__. (IMPORTANT: Make sure you use exactly this name, as we will overwrite the file __nRF52840DK_nRF52840.dts__ with this name!)
+    Create the file __nRF52840DK_nRF52840.overlay__ in your project folder. (IMPORTANT: Make sure you use exactly this name, as we will overwrite the file __nRF52840DK_nRF52840.dts__ with this name!)
 
     Then add following content to this file:
 
