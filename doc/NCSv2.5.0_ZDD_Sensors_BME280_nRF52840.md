@@ -80,7 +80,7 @@ In the previous step, we defined the hardware usage for the BME280 sensor. Now w
 ### KCONFIG: Adding the BME280 Sensor Driver to our Project
 
 7) The required software modules can be added to our project by setting the corresponding CONFIG symbols (KCONFIG). Let's consider which software modules are needed:
-    > - I2C: The BME280 itself supports I2C and SPI interfaces. Howwever, the breakout board is designed so that only I2C is used. 
+    > - I2C: The BME280 itself supports I2C and SPI interfaces. However, the breakout board is designed so that only I2C is used. 
     > - Sensor: Include the sensor drivers to get access to the BME280 sensor driver. 
 
    To enable these modules, we need to add following lines to the __prj.conf__ file.
