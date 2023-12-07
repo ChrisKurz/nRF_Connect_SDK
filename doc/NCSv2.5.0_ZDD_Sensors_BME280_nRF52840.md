@@ -68,7 +68,7 @@ In the previous step, we defined the hardware usage for the BME280 sensor. Now w
                printk("\nError: Device \"%s\" is not ready.\n", dev->name);
                /* You can also use Zephyr Logging instead of printk() instruction, if Logging is enabled in your project. */
                // LOG_ERR("Error: Device \"%s\" is not ready.", dev->name);
-               return;
+               return 0;
            }
 
 6) We use the __DEVICE_DT_GET_ANY__ macro here. This is a DeviceTree macro and is defined in the header file __device.h__. We must therefore include this header file in our project. Add the following line to the __main.c__ file
