@@ -22,11 +22,11 @@ The arduino_spi interface is a remapped interface of spi3 on the nRF52840 SoC. I
 > **Note**
 > You can also connect this specific BME280 breakout board via I2C. Therefore, connect CSB and SDO to VDD, and use the other pins as marked on the BME280 board.
 
-<img src="img/04_spi_connections.png" alt="SPI Connections" width=800/>
+<img src="images/04_spi_connections.png" alt="SPI Connections" width=800/>
 
 You can track down the pin configuration of a board using the built-in VS Code plugin of Nordic (bottom right corner, explore the board file/*.dts) or track down the defined pins via the pinctrl definitions in the device tree files directly.
 
-<img src="img/04_arduino_spi.png" alt="Arduino_spi"/>
+<img src="images/04_arduino_spi.png" alt="Arduino_spi"/>
 
 ### 2) Create Device Tree overlay file
 
@@ -159,10 +159,10 @@ printk("SPI RX: 0x%.2X\n", rx_buffer[0]);
 Ensure that your Nordic Development Kit is connected, and powered on. Its serial number should be listed under __Connected Devices__.<br>
 Hit __Built__ in the Actions menu to compile the project, then hit __Flash__ to download the binary file to the kit.
 
-<img src="img/0x_flash_process.png" alt="Flash process" height=500 />
+<img src="images/0x_flash_process.png" alt="Flash process" height=500 />
 
 ### 10) Reset the Kit and verify the serial terminal output
 
 On the virtual COM port of the DK you should see the following output. We read the BME280 chip id from register 0xD0, the value should be: 0x60.
 
-<img src="img/04_terminal.png" alt="Terminal Output"/>
+<img src="images/04_terminal.png" alt="Terminal Output"/>
