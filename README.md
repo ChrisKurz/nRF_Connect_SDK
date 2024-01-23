@@ -59,10 +59,13 @@ Here is a list of available hands-on exercises:
 
 ### Sensor Device Drivers
 
-- [BME280](doc/NCSv2.5.0_ZDD_Sensors_BME280_nRF52840.md) - using an nRF52840DK. Running Sensor handling in main function.
+- [BME280](doc/NCSv2.5.0_ZDD_Sensors_BME280_nRF52840.md) - using an nRF52840DK and Pimoroni PIM472 sensor board (I2C). Running Sensor handling in main function.
 
-- [BME280](doc/NCSv2.5.0_ZDD_Sensors_BME280_nRF52840_Thread.md) - using an nRF52840DK. Running Sensor handling in a Thread.
+- [BME280](doc/NCSv2.5.0_ZDD_Sensors_BME280_nRF52840_Thread.md) - using an nRF52840DK and Pimoroni PIM472 sensor board (I2C). Running Sensor handling in a Thread.
 
+### Serial Peripheral Interface (SPI) Bus
+
+- []() - using nRF52840DK and DEBO BME280 developer board. Reading BME280 chip ID via SPI.
 
 ## CMake
 
