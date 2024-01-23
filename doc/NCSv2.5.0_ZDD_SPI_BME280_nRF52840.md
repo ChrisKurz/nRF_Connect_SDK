@@ -6,12 +6,13 @@
 This example course teaches you to use the Zephyr SPI driver and perform a basic SPI read. We will read the chip ID register of the BME280 sensor.<br>
 You may start with a blank application example, or use the hello world project as base. Also, take note of the [BME280 datasheet](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf).
 
-## Hardware Requirements:
-* Nordic Developmentkit (nRF52840-DK used here)
-* BME280 Breakout Board with SPI support (e.g. from reichelt Elektronik: [BME280](https://www.reichelt.de/dk/en/developer-boards-temperature-humidity-and-pressure-sensor-bm-debo-bme280-p253982.html?r=1))
+## Required Hardware/Software
+* Nordic Development Kit (nRF52840-DK used here)
+* BME280 Breakout Board with SPI support (e.g. from Reichelt Elektronik: [BME280](https://www.reichelt.de/dk/en/developer-boards-temperature-humidity-and-pressure-sensor-bm-debo-bme280-p253982.html?r=1))
 * 6 Pin jumper cables (male to female)
+* install the _nRF Connect SDK_ v2.5.0 and _Visual Studio Code_. The description of the installation can be found [here](https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.5.0/nrf/getting_started/assistant.html#).
 
-## Step-by-step Tutorial
+## Hands-on step-by-step description
 
 ### 1) SPI Connection
 Connect the BME280 breakout board to the nRF52840-DK as shown below. <br>
@@ -150,6 +151,8 @@ if (ret) {
 printk("SPI TX: 0x%.2X\n", addr);
 printk("SPI RX: 0x%.2X\n", rx_buffer[0]);
 ```
+
+## Testing
 
 ### 9) Compile the project and flash the program
 
