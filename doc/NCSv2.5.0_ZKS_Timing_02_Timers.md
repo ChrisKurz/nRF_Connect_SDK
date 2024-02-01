@@ -15,7 +15,7 @@ The Zephyr kernel provides a _Timer_ object that can be used to generate timings
 
 ### Create a new Project
 
-1) Create a new application. User the zephyr/samples/hello_world sample. 
+1) Create a new application. Use the zephyr/samples/hello_world sample. 
 
 ### Define k_timer Variable
 
