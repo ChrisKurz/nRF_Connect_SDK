@@ -59,6 +59,8 @@ Creating a project from scratch is quite simple with Zephyr. Here is a descripti
             return 0;
        }
 
+   NOTE: In the __main.c__ file we use the _printk()_ instruction. To be able to use this function, we must insert the line __#include <zephyr/sys/printk.h>__. Please note that the header file __kernel.h__ also includes other header files, such as the __printk.h__ file. For this reason, we only include the __kernel.h__ file in the main.c file above.
+
 ## Testing
 
 5) Start Visual Studio Code. 
