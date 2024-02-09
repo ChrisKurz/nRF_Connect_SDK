@@ -96,8 +96,10 @@ Creating a project from scratch is quite simple with Zephyr. Here is a descripti
 
 13) Open a terminal program, for example the _Serial Terminal_ that is available in _nRF Connect for Desktop_
  
-   Settings: 115200 baud, 8 data bits, 1 stop bit, no parity, no flow control)
+    Settings: 115200 baud, 8 data bits, 1 stop bit, no parity, no flow control
+    
+    __NOTE: These are the default settings of _Serial Terminal_ program that is available in _nRF COnnect for Desktop_.__
 
-14) Reset the kit. The Zephyr boot message and "Hello World" string is shown in the terminal. 
+15) Reset the kit. The Zephyr boot message and "Hello World" string is shown in the terminal. 
 
    ![image](images/01_NrfTerminal-2.jpg)
