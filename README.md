@@ -2,7 +2,7 @@
 
 In this repository you will find several step-by-step hands-on descriptions showing how to use the Nordic Semiconductor _nRF Connect SDK_. 
 
-All hands-on exercises are based on _nRF Connect SDK_ v2.4.0. (There are also hands-on based on older versions. Check the NCS version numbers, which are mentioned in the appropriate file and folder names.)
+All hands-on exercises are based on _nRF Connect SDK_ v2.4.0. (There are also hands-on based on older versions. Check the NCS version numbers, which are mentioned in the files and folder names.)
 
 Here is a list of available hands-on exercises:
 
