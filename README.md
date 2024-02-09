@@ -12,7 +12,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 ## Getting started
 
-- [Creating a Project from Scratch](doc/NCSv2.5.0_01_ProjectFromScratch.md) - This hands-on demonstrates how to create a project from scratch.
+- [Creating a Project from Scratch](doc/NCSv2.5.2_01_ProjectFromScratch.md) - This hands-on demonstrates how to create a project from scratch.
 
 - [User-defined KCONFIG symbols](doc/NCSv2.5.0_03_User-Defined_KCONFIG.md) - KCONFIG allows you to add software modules from Zephyr repository or other repositories. But you can also define own KCONFIG symbols. This hands-on demonstrates how this can be done
 
