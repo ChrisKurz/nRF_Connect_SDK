@@ -7,6 +7,8 @@ On this page you will find many links to step-by-step descriptions explaining ba
 - [Bluetooth](https://github.com/ChrisKurz/Bluetooth)
 - [MCUboot](https://github.com/ChrisKurz/MCUboot)
 
+I would also like to share a collection of useful links to documentation, descriptions, blogs, videos and trainings which are also shared by the Zephyr community. This list can be found here: [usefulLinks.md](usefulLinks.md)
+
 Here is a list of available hands-on exercises:
 
 ## Getting started
