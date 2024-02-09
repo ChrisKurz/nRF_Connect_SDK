@@ -1,6 +1,11 @@
 # nRF Connect SDK
 
-In this repository you will find several step-by-step hands-on descriptions showing how to use the Nordic Semiconductor _nRF Connect SDK_. 
+In this repository you will find several step-by-step hands-on descriptions showing how to use the Nordic Semiconductor _nRF Connect SDK_.
+
+On this page you will find many links to step-by-step descriptions explaining basic _nRF Connect SDK_ and _Zephyr RTOS_ functions. In addition, specific step-by-step descriptions can also be found here:
+
+- [Bluetooth](https://github.com/ChrisKurz/Bluetooth)
+- [MCUboot](https://github.com/ChrisKurz/MCUboot)
 
 Here is a list of available hands-on exercises:
 
