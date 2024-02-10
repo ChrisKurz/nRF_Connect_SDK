@@ -102,4 +102,4 @@ Creating a project from scratch is quite simple with Zephyr. Here is a descripti
 
 15) Reset the kit. The Zephyr boot message and "Hello World" string is shown in the terminal. 
 
-   ![image](images/01_NrfTerminal-2.jpg)
+   ![image](images/01_NrfTerminal-NCSv2.5.2.jpg)
