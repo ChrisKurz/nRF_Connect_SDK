@@ -14,7 +14,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 - [Creating a Project from Scratch](doc/NCSv2.5.2_01_ProjectFromScratch.md) - This hands-on demonstrates how to create a project from scratch.
 
-- [User-defined KCONFIG symbols](doc/NCSv2.5.0_03_User-Defined_KCONFIG.md) - KCONFIG allows you to add software modules from Zephyr repository or other repositories. But you can also define own KCONFIG symbols. This hands-on demonstrates how this can be done
+- [User-defined KCONFIG symbols](doc/NCSv2.5.2_03_User-Defined_KCONFIG.md) - KCONFIG allows you to add software modules from Zephyr repository or other repositories. But you can also define own KCONFIG symbols. This hands-on demonstrates how this can be done
 
 - [Generating a License Report](doc/NCSv2.5.0_LicenseReport.md) - _nRF Connect SDK_ provides the _Software Bill of Materials_ tool that allows to create license report for your own project. This hands-on shows how to use the tool.
 
@@ -23,7 +23,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 ### Logging
 
-- [Adding Zephyr Logging](doc/NCSv2.5.0_02_ZephyrLogging.md) - Here we add Zephyr Logging to our project. This allows us to get debug messages during runtime.
+- [Adding Zephyr Logging](doc/NCSv2.5.2_02_ZephyrLogging.md) - Here we add Zephyr Logging to our project. This allows us to get debug messages during runtime.
 
 - [Zephyr Logging in modules with multiple files](doc/NCSv2.5.0_02_ZephyrLogging_declare.md) - This hands-on shows how to add Logging to a module that consist of multiple files.
 
