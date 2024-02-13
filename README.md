@@ -67,7 +67,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 - [BME280](doc/NCSv2.5.2_ZDD_Sensors_BME280_nRF52840.md) - using an nRF52840DK and Pimoroni PIM472 sensor board (I2C). Running Sensor handling in main function.
 
-- [BME280](doc/NCSv2.5.0_ZDD_Sensors_BME280_nRF52840_Thread.md) - using an nRF52840DK and Pimoroni PIM472 sensor board (I2C). Running Sensor handling in a Thread.
+- [BME280](doc/NCSv2.5.2_ZDD_Sensors_BME280_nRF52840_Thread.md) - using an nRF52840DK and Pimoroni PIM472 sensor board (I2C). Running Sensor handling in a Thread.
 
 - [BME280](doc/NCSv2.5.0_ZDD_Sensors_BME280_nRF52840_SPI.md) - using an nRF52840DK and DEBO BME280 sensor board (SPI). Running Sensor handling in main function.
 
