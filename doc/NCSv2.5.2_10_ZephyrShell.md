@@ -101,13 +101,7 @@ It is particularly interesting that Zephyr has a predefined shell solution for v
 
    ![image](images/10_terminal_helpLED_NCSv2.5.2.jpg)
 
-11) Switch on/off the LED by entering following commands:
-
-         led on
-
-   or
-
-         led off
+11) Switch on/off the LED by entering the commands __led on__ or __led off__.
 
    ![image](images/10_terminal_ledonoff_NCSv2.5.2.jpg)
    
