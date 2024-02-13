@@ -84,13 +84,25 @@ This is a collection of links to useful resources that cover the _nRF Connect SD
 
 ## Tools
 
+### git
+
 [git Documentation](https://git-scm.com/doc)
 
-[CMake](https://cmake.org/)  /  [CMake Reference Documentation](https://cmake.org/cmake/help/latest/)
+### CMake
+
+[CMake](https://cmake.org/)  
+
+[CMake Reference Documentation](https://cmake.org/cmake/help/latest/)
+
+### Device Tree
 
 [DeviceTree](https://www.devicetree.org/)
 
+### Ninja
+
 [Ninja](https://ninja-build.org/) - I list this just for completness. More important is CMake.
+
+### GCC
 
 [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) - Default compiler in Zephyr. Different compilers could be included. More important for software development is git, CMake, and DeviceTree. 
 
