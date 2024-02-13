@@ -31,7 +31,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 ### Shell
 
-- [Adding Zephyr Shell](doc/NCSv2.5.0_10_ZephyrShell.md) - Here we add Zephyr Shell to our project. This module is a UNIX-like shell.
+- [Adding Zephyr Shell](doc/NCSv2.5.2_10_ZephyrShell.md) - Here we add Zephyr Shell to our project. This module is a UNIX-like shell.
 
 
 ## Zephyr Kernel Services

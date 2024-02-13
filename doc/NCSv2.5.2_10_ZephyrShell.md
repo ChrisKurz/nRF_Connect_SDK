@@ -97,7 +97,9 @@ It is particularly interesting that Zephyr has a predefined shell solution for v
 
    ![image](images/10_terminal_help_NCSv2.5.2.jpg)
 
-10) When we defined the commands in step 4, we also add some information that is output when a help command is entered. To see these information enter __led help__ in the terminal: 
+   __Note:__ In the list of available commands, you can also see the __led__ command that we have defined.
+
+11) When we defined the commands in step 4, we also add some information that is output when a help command is entered. To see these information enter __led help__ in the terminal: 
 
    ![image](images/10_terminal_helpLED_NCSv2.5.2.jpg)
 
