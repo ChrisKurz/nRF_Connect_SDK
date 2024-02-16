@@ -9,7 +9,7 @@ This module allows you to create and handle a shell with a user-defined command 
 It is particularly interesting that Zephyr has a predefined shell solution for various software drivers. So you can test the software modules [Bluetooth](https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/samples/bluetooth/shell_bt_nus/README.html), [Sensor driver](https://docs.nordicsemi.com/bundle/ncs-latest/page/zephyr/samples/sensor/sensor_shell/README.html), [Flash driver](https://docs.nordicsemi.com/bundle/ncs-latest/page/zephyr/samples/drivers/flash_shell/README.html), [Wifi](https://docs.nordicsemi.com/bundle/ncs-latest/page/zephyr/samples/net/wifi/README.html), and many more using shell examples and reuse the corresponding code that is used in the shell commands. 
 
 ## Required Hardware/Software
-- Development kit [nRF52840DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52840-DK), [nRF52833DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52833-DK), or [nRF52DK](https://www.nordicsemi.com/Products/Development-hardware/nrf52-dk)
+- Development kit [nRF52840DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52840-DK), [nRF52833DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52833-DK), or [nRF52DK](https://www.nordicsemi.com/Products/Development-hardware/nrf52-dk), (nRF54L15DK)
 - Micro USB Cable (Note that the cable is not included in the previous mentioned development kits.)
 - install the _nRF Connect SDK_ v2.5.2 and _Visual Studio Code_. The installation process is described [here](https://academy.nordicsemi.com/courses/nrf-connect-sdk-fundamentals/lessons/lesson-1-nrf-connect-sdk-introduction/topic/exercise-1-1/).
 
