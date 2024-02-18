@@ -74,7 +74,7 @@ In the previous exercise we did the sensor handling in the main function. For a 
 
 ### Moving the complete BME280 sensor code from main function to the Thread
 
-8) Now we remove the BME280 sensor handling from the _main()_ function and put it into the _Thread_BME280()_ function. These lines should be replaced into Thread function:
+8) Now we remove the BME280 sensor handling from the _main()_ function and put it into the _Thread_BME280()_ function. These lines should be moved to Thread function:
 
   <sup>remove these lines from _main()_ and paste it into _Thread_BME280()_</sup>
 
