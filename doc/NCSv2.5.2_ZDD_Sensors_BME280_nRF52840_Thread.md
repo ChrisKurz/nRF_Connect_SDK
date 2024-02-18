@@ -18,7 +18,7 @@ There are a large number of drivers in the Zephyr RTOS. In this hands-on exercis
 
 ### Connecting the BME280 Breakout Board to the nRF52840DK
 
-1) First connect the BME280 Breakout Board to the nRF52840DK as shown in the next picutre:
+1) First connect the BME280 Breakout Board to the nRF52840DK as shown in the next picture:
 
     ![image not found](images/ZDD_Sensor_BME280_nRF52840DK_NCSv2.5.0.jpg)
 
