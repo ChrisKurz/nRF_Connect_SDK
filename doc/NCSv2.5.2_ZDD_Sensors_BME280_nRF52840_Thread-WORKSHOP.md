@@ -100,6 +100,7 @@ In the previous exercise we did the sensor handling in the main function. For a 
             k_sleep(K_MSEC(1000));                
         }	
 
+   __NOTE:__ The only change we have to do is to remove the "retrun 0;" line from the code we paste in _Thread_BME280()_ function!
 
 ## Testing
 
