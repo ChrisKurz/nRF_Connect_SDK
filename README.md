@@ -63,6 +63,10 @@ I would also like to share a collection of useful links to documentation, descri
 
 ## Zephyr Device Drivers
 
+### ADC Device Driver
+
+-[ADC - Using a single ADC channel](doc/NCSv2.5.2_ZHW_ADC_1.md) - Realising a simple single channel ADC conversion based on the Zephyr ADC Driver. 
+
 ### Sensor Device Drivers
 
 - [BME280](doc/NCSv2.5.2_ZDD_Sensors_BME280_nRF52840.md) - using an nRF52840DK and Pimoroni PIM472 sensor board (I2C). Running Sensor handling in main function.
@@ -75,7 +79,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 - [Read BME280 ID via SPI](doc/NCSv2.5.0_ZDD_SPI_BME280_nRF52840.md) - using nRF52840DK and DEBO BME280 developer board. Reading BME280 chip ID via SPI.
 
-
+ 
 ## Board Definition
 
 - [Creating a Custom Board Definition from Scratch](doc/NCSv2.5.2_Board_1.md) - This simple example shows how to create an own custom board. 
