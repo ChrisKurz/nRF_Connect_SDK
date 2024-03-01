@@ -65,7 +65,7 @@ In this hands-on, we define a very simple board that essentially consists of jus
 
    > **_Note:_** You should see that there is an additional filter "Custom boards". If you activate this filter, only a list of custom boards should be displayed in the drop-down list. In our case, we have only defined one board, so you should only see this one.
    > 
-   >  ![missing image](images/Boards_add_build_configuration_filter.JPG)
+   >  ![missing image](images/Boards_add_build_configuration_filter.jpg)
 
 
 ## Add the custom board specific settings in the board defintion
