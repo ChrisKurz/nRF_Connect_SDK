@@ -1,7 +1,4 @@
-# !!! WORK IN PROGRESS !!!
-
-
-<sup>SDK version: NCS v2.5.2  -  Link to Hands-on solution: </sup>
+<sup>SDK version: NCS v2.5.2  -  Link to Hands-on solution: https://github.com/ChrisKurz/nRF_Connect_SDK/tree/main/Workspace/NCSv2.5.2/board_1</sup>
 
 # Creating a Custom Board Definition from Scratch
 
