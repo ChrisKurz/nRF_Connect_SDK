@@ -75,6 +75,11 @@ I would also like to share a collection of useful links to documentation, descri
 
 - [Read BME280 ID via SPI](doc/NCSv2.5.0_ZDD_SPI_BME280_nRF52840.md) - using nRF52840DK and DEBO BME280 developer board. Reading BME280 chip ID via SPI.
 
+
+## Board Definition
+
+- [Creating a Custom Board Definition from Scratch](doc/NCSv2.5.2_Board_1.md) - This simple example shows how to create an own custom board. 
+
 ## CMake
 
 - [Defining a folder for which all C files are automatically included into your project ](doc/CMake/CMake_01_DefineSourceFolder.md) - Adding all *.c files from your _src_ folder into your project. 
