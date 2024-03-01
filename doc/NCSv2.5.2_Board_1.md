@@ -27,8 +27,10 @@ In this hands-on, we define a very simple board that essentially consists of jus
 2) The _nRF Connect_ extension within _Visual Studio Code_ also offers a Board Wizard that helps with defining new Boards. Let's use this wizard.
 
    Click on __Create a new board__.
-   ![missing image](images/CreateNewBoard.jpg)
-3)  Within Visual Studio Code you will see that the __Create New Board__ Wizards will guide you through 5 steps:
+
+      ![missing image](images/CreateNewBoard.jpg)
+   
+4)  Within Visual Studio Code you will see that the __Create New Board__ Wizards will guide you through 5 steps:
     - "Enter a human-readable name for your board." - Enter here for example __My Test Board__.
 
       ![missing image](images/NewBoard-1.jpg)
@@ -44,7 +46,7 @@ In this hands-on, we define a very simple board that essentially consists of jus
     - "Enter the name of the company that made this board." - The DeviceTree requires for its _compatible_ property a vendor name (or company name). The name we enter will be used. So use your own company name here. 
 
       ![missing image](images/NewBoard-5.jpg)
-4) If the previous board wizard steps have been done, then the following files should be present in our __C:/Nordic/MyBoards__ directory.
+5) If the previous board wizard steps have been done, then the following files should be present in our __C:/Nordic/MyBoards__ directory.
 
    ![missing image](images/NewBoard-directory.jpg)
 
