@@ -24,7 +24,7 @@ In this hands-on, we define a very simple board that essentially consists of jus
 
 ### Create the own Board Definition
 
-1) In general, the SDK directory should not be changed during project development. It should be known that the predefined boards can be found in the directories _SDK directory_/zephyr/boards and _SDK directory_/nrf/boards. We will store our own board outside the SDK directory, for example in the directory __C:/Nordic/MyBoards__.
+1) In general, the SDK directory should not be changed during project development. It should be known that the predefined boards can be found in the directories _SDK directory_/zephyr/boards and _SDK directory_/nrf/boards. When we define our own board, it should be saved outside the SDK directory, for example in the directory __C:/Nordic/MyBoards__.
 
    Create the new directory __C:/Nordic/MyBoards__. 
 2) The _nRF Connect_ extension within _Visual Studio Code_ also offers a Board Wizard that helps with defining new Boards. Let's use this wizard.
@@ -52,15 +52,86 @@ In this hands-on, we define a very simple board that essentially consists of jus
    ![missing image](images/NewBoard-directory.jpg)
 
 
-### Make custom board directory accessible in Visual Studio Code
+### Make custom board directory accessible for build system
 
+5) If we want to use our own board for a project, we must first tell the build system in which other directories to search for boards. In addition, Visual Studio Code should also know where to find the custom boards, which also makes these boards selectable when you __Add build configuration__. So we set the path to our custom boards in the Visual Studio Code settings. Navigate to __File|Preferences|Settings|Extensions|nRF Connect >> Board Roots__, then add the directory defined in step 1 and press "Ok" button. 
 
-5) 
-
-
-
-
-
-
+   ![missing image](images/Board_Roots_Setting.jpg)
    
-    
+
+### Create a new project
+6) Create a new project based on Zephyr's blinky (/zephyr/samples/basic/blinky). And when creating the _build configuration_, select the board that we previously created with the board wizard.
+
+   ![missing image](images/Board_add_build_configuration.jpg)
+
+   > **_Note:_** You should see that there is an additional filter "Custom boards". If you activate this filter, only a list of custom boards should be displayed in the drop-down list. In our case, we have only defined one board, so you should only see this one.
+   > 
+   >  ![missing image](images/Boards_add_build_configuration_filter.JPG)
+
+
+## Add the custom board specific settings in the board defintion
+At this point, the board definition already exists. You can already select the board for a project. However, it currently only consists of the basic structure. The next steps are to add the specific settings for your own board now. As an example, the definition of the LED connected to a GPIO will be made here. 
+
+Usually, however, much more points should be considered here. Such as:
+- How should the power supply in the nRF5 chip be configured? (LDO, DC/DC)
+- Should Logging be activated? (if yes, via UART or/and RTT)
+
+The defined development kit boards in Zephyr and nrf folder of the SDK may help here to find appropriate settings.
+
+### KCONFIG file ("my_test_board_defconfig")
+7) KCONFIG settings are defined in this file specifically for the custom board. In our example, we only want to use the LED. Therefore we have to include the Zephyr software module for the use of GPIOs. These are:
+   - [GPIO drivers](https://docs.nordicsemi.com/bundle/ncs-2.5.2/page/zephyr/hardware/peripherals/gpio.html)
+   - [Pin Control](https://docs.nordicsemi.com/bundle/ncs-2.5.2/page/zephyr/hardware/pinctrl/index.html)
+
+   Add following lines in the __my_test_board_defconfig__ file.
+
+   <sup> __c:/Nordic/MyBoards/boards/arm/my_test_board/my_test_board_defconfig__</sup>
+
+       # Enable GPIO
+       CONFIG_GPIO=y
+       CONFIG_PINCTRL=y
+
+### DeviceTree file ("my_test_board.dts")
+
+
+8) Let's enable the GPIO that is used for the LED. So in the DeviceTree Source file (DTS file) we add following lines:
+
+   <sup>__c:/Nordic/MyBoards/boards/arm/my_test_board/my_test_board.dts__</sup>
+
+       &gpio0 {
+            status = "okay";
+       };
+ 
+       &gpiote {
+            status = "okay";
+       };   
+   
+10) Using DeviceTree in our C source code requires two defines:
+    - a node that allows to access the properties
+    - and the properties itself
+
+   The default blinky sample is using ALIAS to access the node. I don't want to change the blinky source code, so we will also define an ALIAS for the LED0 in the DeviceTree file.
+
+   <sup>__c:/Nordic/MyBoards/boards/arm/my_test_board/my_test_board.dts__</sup>
+
+       / {
+    	     leds {
+               compatible = "gpio-leds";
+               
+               led0: led_0 {
+                   gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+                   label = "LED0 (green)";
+               };
+           };
+
+           aliases {
+               led0 = &led0;
+           };
+       };
+
+> **_Note:_** The property __gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;__ specifies that pin P0.13 is used for LED0. Please check where the LED is connected on your board and change the setting of the port or pin number if necessary.
+
+
+## Testing
+
+11) Build the project and flash it to the development kit. You should see the LED blinking.
