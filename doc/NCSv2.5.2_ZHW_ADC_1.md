@@ -89,7 +89,7 @@ Let's prepare a DeviceTree overlay file:
 
 So your DeviceTree overlay file should now look like this:
 
-[image](images/ZHW_ADC_1_overlayFile.jpg)
+![missing image](images/ZHW_ADC_1_overlayFile.jpg)
 
 
 ### Including DeviceTree Configuration in C source code
