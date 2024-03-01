@@ -34,7 +34,7 @@ In this hands-on, we define a very simple board that essentially consists of jus
     - "Enter a human-readable name for your board." - Enter here for example __My Test Board__.
 
       ![missing image](images/NewBoard-1.jpg)
-    - Then a __board ID__ is needed. The wizard generates automatically an ID based on the previous entry. Nevertheless, you could also define a own ID. Let's use the automatically generated board ID.
+    - Then a __board ID__ is needed. The wizard automatically enerates an ID based on the previous entry. Nevertheless, you could also define a own ID. Let's use the automatically generated board ID.
 
       ![missing image](images/NewBoard-2.jpg)
     - In the next step we select the SoC which is used on our board. Here it is important to select the exact SoC number (nRF52840, nRF52832, ...) as well as its variant (QIAA, CIAA, ...).
