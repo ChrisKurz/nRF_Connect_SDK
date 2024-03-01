@@ -79,17 +79,14 @@ Usually, however, much more points should be considered here. Such as:
 The defined development kit boards in Zephyr and nrf folder of the SDK may help here to find appropriate settings.
 
 ### KCONFIG file ("my_test_board_defconfig")
-7) KCONFIG settings are defined in this file specifically for the custom board. In our example, we only want to use the LED. Therefore we have to include the Zephyr software module for the use of GPIOs. These are:
-   - [GPIO drivers](https://docs.nordicsemi.com/bundle/ncs-2.5.2/page/zephyr/hardware/peripherals/gpio.html)
-   - [Pin Control](https://docs.nordicsemi.com/bundle/ncs-2.5.2/page/zephyr/hardware/pinctrl/index.html)
-
+7) KCONFIG settings are defined in this file specifically for the custom board. In our example, we only want to use the LED. Therefore we have to include the Zephyr software module for the use of GPIOs. 
+   
    Add following lines in the __my_test_board_defconfig__ file.
 
    <sup> __c:/Nordic/MyBoards/boards/arm/my_test_board/my_test_board_defconfig__</sup>
 
        # Enable GPIO
        CONFIG_GPIO=y
-       CONFIG_PINCTRL=y
 
 ### DeviceTree file ("my_test_board.dts")
 
@@ -135,3 +132,6 @@ The defined development kit boards in Zephyr and nrf folder of the SDK may help 
 ## Testing
 
 11) Build the project and flash it to the development kit. You should see the LED blinking.
+
+12) The blinky project also enables GPIO in its __prj.conf__ file. Remove the __CONFIG_GPIO=y__ line in the project's __prj.conf__ file. Build and flash the project again. LED should still blink, because the GPIO software module is added in the custom board definition.
+
