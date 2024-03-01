@@ -115,7 +115,7 @@ The defined development kit boards in Zephyr and nrf folder of the SDK may help 
    <sup>__c:/Nordic/MyBoards/boards/arm/my_test_board/my_test_board.dts__</sup>
 
        / {
-    	     leds {
+           leds {
                compatible = "gpio-leds";
                
                led0: led_0 {
