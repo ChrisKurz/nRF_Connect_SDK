@@ -65,7 +65,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 ### ADC Device Driver
 
--[ADC - Using a single ADC channel](doc/NCSv2.5.2_ZHW_ADC_1.md) - Realising a simple single channel ADC conversion based on the Zephyr ADC Driver. 
+- [ADC - Using a single ADC channel](doc/NCSv2.5.2_ZHW_ADC_1.md) - Realising a simple single channel ADC conversion based on the Zephyr ADC Driver. 
 
 ### Sensor Device Drivers
 
