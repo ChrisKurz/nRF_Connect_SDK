@@ -84,6 +84,10 @@ I would also like to share a collection of useful links to documentation, descri
 
 - [Creating a Custom Board Definition from Scratch](doc/NCSv2.5.2_Board_1.md) - This simple example shows how to create an own custom board. 
 
+## NRFX Driver
+
+- [ADC - Using a single ADC channel](doc/NRFX_ADC_1.md) - Realising a simple single channel ADC conversion based on NRFX ADC driver.
+
 ## CMake
 
 - [Defining a folder for which all C files are automatically included into your project ](doc/CMake/CMake_01_DefineSourceFolder.md) - Adding all *.c files from your _src_ folder into your project. 
