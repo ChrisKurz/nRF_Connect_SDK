@@ -36,7 +36,8 @@ In this hands-on, we define a very simple board that essentially consists of jus
       ![missing image](images/NewBoard-1.jpg)
 
       > **_Note:_**
-      > When naming your custom board, there are a few conventions that you should follow.
+      > 
+      > When naming your custom board, there are a few conventions that you should follow:
       > - You must give your board a unique name. Run __west boards__ in the nRF Connect Terminal to get a list of names already assigned; you cannot name your custom board with a name that is already in use.
       > - It is recommended that the name of your board also contains the name of the SoC. For example, let's say we want to create a new board called __MyBoard__ based on the nRF52833 SoC. Then it is recommended to name your board "__MyBoard nRF52833__".
 
