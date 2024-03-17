@@ -15,7 +15,7 @@ This exercise demonstrates the use of the Zephyr hardware ADC driver. Note that 
 
 ### Create a new Project
 
-1) Create a new project based on [Creating a Project from Scracth_ exercise](https://github.com/ChrisKurz/nRF_Connect_SDK/blob/main/doc/NCSv2.5.2_01_ProjectFromScratch.md). 
+1) Create a new project based on [Creating a Project from Scratch_ exercise](https://github.com/ChrisKurz/nRF_Connect_SDK/blob/main/doc/NCSv2.5.2_01_ProjectFromScratch.md). 
 
 
 ### Add needed Software Module
