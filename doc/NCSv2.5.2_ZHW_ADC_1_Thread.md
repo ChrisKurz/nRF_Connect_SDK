@@ -1,6 +1,6 @@
 <sup>SDK version: NCS v2.5.2  -  Link to Hands-on solution: https://github.com/ChrisKurz/nRF_Connect_SDK/tree/main/Workspace/NCSv2.5.2/ZHW_ADC_1_Thread</sup>
 
-# Zephyr Hardware Driver: ADC - Using a thread for single channel A/D conversion
+# Zephyr Hardware Driver: ADC - Using a Thread for single channel A/D conversion
 
 ## Introduction
 
