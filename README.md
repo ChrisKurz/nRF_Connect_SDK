@@ -63,7 +63,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 ## Zephyr Device Drivers
 
-### ADC Device Driver
+### ADC Driver
 
 - [ADC - Using a single ADC channel](doc/NCSv2.5.2_ZHW_ADC_1.md) - Realising a simple single channel ADC conversion based on the Zephyr ADC Driver. 
 
@@ -75,7 +75,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 - [BME280](doc/NCSv2.5.0_ZDD_Sensors_BME280_nRF52840_SPI.md) - using an nRF52840DK and DEBO BME280 sensor board (SPI). Running Sensor handling in main function.
 
-### Serial Peripheral Interface (SPI) Bus
+### SPI Driver
 
 - [Read BME280 ID via SPI](doc/NCSv2.5.0_ZDD_SPI_BME280_nRF52840.md) - using nRF52840DK and DEBO BME280 developer board. Reading BME280 chip ID via SPI.
 
@@ -83,6 +83,10 @@ I would also like to share a collection of useful links to documentation, descri
 ## Board Definition
 
 - [Creating a Custom Board Definition from Scratch](doc/NCSv2.5.2_Board_1.md) - This simple example shows how to create an own custom board. 
+
+## NRFX Driver
+
+- [ADC - Using a single ADC channel](doc/NRFX_ADC_1.md) - Realising a simple single channel ADC conversion based on NRFX ADC driver.
 
 ## CMake
 

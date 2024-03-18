@@ -20,6 +20,8 @@ This is a collection of links to useful resources that cover the _nRF Connect SD
 
 [Nordic DevAcademy Course:  nRF Connect SDK Fundamentals](https://academy.nordicsemi.com/courses/nrf-connect-sdk-fundamentals/) - this online course describes starting from scratch, e.g. installation, run first sample project, KCONFIG, DeviceTree, Logging, UART, I2C, Multithreaded appications, Thread synchronization.
 
+[Nordic DevAcademy Course:  nRF Connect SDK Intermediate](https://academy.nordicsemi.com/courses/nrf-connect-sdk-intermediate/) - this course covers Zephyr beyond the basics, Debug and troubleshoot, creating custom boards, SPI/ADC/PWM peripherals, device driver development, and DFU/FOTA. 
+
 [Thread aware Debugging - using SEGGER Ozone](https://devzone.nordicsemi.com/nordic/nordic-blog/b/blog/posts/thread-aware-debugging-with-nrf-connect-sdk) - In case you have installed SEGGER Ozone on your computer, you can also open it via the Visual Studio Action Menu link "Debug with Ozone". 
 
 ## Documentation

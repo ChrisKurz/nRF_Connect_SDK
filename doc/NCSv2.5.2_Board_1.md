@@ -34,6 +34,13 @@ In this hands-on, we define a very simple board that essentially consists of jus
     - "Enter a human-readable name for your board." - Enter here for example __My Test Board__.
 
       ![missing image](images/NewBoard-1.jpg)
+
+      > **_Note:_**
+      > 
+      > When naming your custom board, there are a few conventions that you should follow:
+      > - You must give your board a unique name. Run __west boards__ in the nRF Connect Terminal to get a list of names already assigned; you cannot name your custom board with a name that is already in use.
+      > - It is recommended that the name of your board also contains the name of the SoC. For example, let's say we want to create a new board called __MyBoard__ based on the nRF52833 SoC. Then it is recommended to name your board "__MyBoard nRF52833__".
+
     - Then a __board ID__ is needed. The wizard automatically generates an ID based on the previous entry. Nevertheless, you could also define a own ID. Let's use the automatically generated board ID.
 
       ![missing image](images/NewBoard-2.jpg)
@@ -68,7 +75,7 @@ In this hands-on, we define a very simple board that essentially consists of jus
    >  ![missing image](images/Boards_add_build_configuration_filter.jpg)
 
 
-## Add the custom board specific settings in the board defintion
+### Add the custom board specific settings in the board defintion
 At this point, the board definition already exists. You can already select the board for a project. However, it currently only consists of the basic structure. The next steps are to add the specific settings for your own board now. As an example, the definition of the LED connected to a GPIO will be made here. 
 
 Usually, however, much more points should be considered here. Such as:
@@ -77,7 +84,7 @@ Usually, however, much more points should be considered here. Such as:
 
 The defined development kit boards in Zephyr and nrf folder of the SDK may help here to find appropriate settings.
 
-### KCONFIG file ("my_test_board_defconfig")
+#### KCONFIG file ("my_test_board_defconfig")
 7) KCONFIG settings are defined in this file specifically for the custom board. In our example, we only want to use the LED. Therefore we have to include the Zephyr software module for the use of GPIOs. 
    
    Add following lines in the __my_test_board_defconfig__ file.
@@ -87,7 +94,7 @@ The defined development kit boards in Zephyr and nrf folder of the SDK may help 
        # Enable GPIO
        CONFIG_GPIO=y
 
-### DeviceTree file ("my_test_board.dts")
+#### DeviceTree file ("my_test_board.dts")
 
 
 8) Let's enable the GPIO that is used for the LED. So in the DeviceTree Source file (DTS file) we add following lines:

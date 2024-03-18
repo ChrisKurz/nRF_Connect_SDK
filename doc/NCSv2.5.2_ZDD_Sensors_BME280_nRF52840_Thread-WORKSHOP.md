@@ -56,7 +56,7 @@ In the previous exercise we did the sensor handling in the main function. For a 
 
        #define MYTHREAD_STACK_SIZE 500
 
-6) Another parameter is MYTHREAD_PRIORTIY. We have to define it by insterting following line.
+6) Another parameter is MYTHREAD_PRIORTIY. We have to define it by inserting following line.
 
    <sup>_src/main.c_</sup>
 
