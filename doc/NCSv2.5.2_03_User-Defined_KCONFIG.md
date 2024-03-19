@@ -34,7 +34,7 @@ This is exactly what we will look at on this page.
      _CONFIG_MYAPP_LOG_LEVEL_: 
      You have already seen that the Zephyr Logging allows to define different Log Levels. This user defined symbol is used to allow setting the log level. 
 
-     Defining of these symbols is done in a __kconfig.__ (blank extension in Windows! Do not enter the "." in Linux) file. So let's add the following kconfig. file to our project folder:
+     Defining of these symbols is done in a __kconfig.__ (blank extension in Windows! Use __Kconfig__ in Linux and do not enter the "." in Linux) file. So let's add the following kconfig. file to our project folder:
 
      <sup>_kconfig._</sup>
   
