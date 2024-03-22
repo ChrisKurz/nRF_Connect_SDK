@@ -83,7 +83,7 @@ The shell implementation in Zephyr is extremely helpful for carrying out tests w
 
    This scan shows that a device with slave address 0x76 is connected to the I2C bus.
 
-10) Let's try to read the chip_id of the connected BME280 sensor. The sensor datasheet states that the chip id can be read from register 0xD0 and its content should be 0x60. We use the command __i2c read_byte _device name_ _slave address_ _register___.
+10) Let's try to read the chip_id of the connected BME280 sensor. The sensor datasheet states that the chip id can be read from register 0xD0 and its content should be 0x60. We use the command __i2c read_byte _"device name"_ _"slave address"_ _"sensor register"___.
 
    ![image](images/shell_i2c_terminal_readid.jpg)
 
