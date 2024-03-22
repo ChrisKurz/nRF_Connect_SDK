@@ -48,7 +48,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 - [Timers](doc/NCSv2.5.0_ZKS_Timing_02_Timers.md) - This hands-on demonstrates how Zephyr's Timing Kernel Service can be used (Timer for Function trigger).
 
-- [UpTime](doc/NCSv2.5.0_ZKS_Timing_UpTime.md) - Zephyr provides the application access to an uptime counter. This examples shows the available API functions. 
+- [UpTime](doc/NCSv2.6.0_ZKS_Timing_UpTime.md) - Zephyr provides the application access to an uptime counter. This examples shows the available API functions. 
 
 ### Other
 
