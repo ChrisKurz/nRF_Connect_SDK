@@ -33,6 +33,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 - [Adding Zephyr Shell](doc/NCSv2.6.0_10_ZephyrShell.md) - Here we add Zephyr Shell to our project. This module is a UNIX-like shell.
 
+- [I2C Shell](doc/NCSv2.6.0_10_ZephyrShell_I2C.md) - This hands-on shows how to enable I2C shell. It is shown how to scan for I2C devices on the bus and reading a byte from the connected sensor. 
 
 ## Zephyr Kernel Services
 

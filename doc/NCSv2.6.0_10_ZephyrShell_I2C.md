@@ -77,13 +77,13 @@ The shell implementation in Zephyr is extremely helpful for carrying out tests w
 
    The list shows that the __i2c@40003000__ is enabled.
 
-9) Let's do a scan on I2C bus and look for all connected devices. In this example the BME280 breakout board for the [Adding BME280 Sensor Driver to an nRF52480 Project](https://github.com/ChrisKurz/nRF_Connect_SDK/blob/main/doc/NCSv2.5.2_ZDD_Sensors_BME280_nRF52840.md) hands-on is connected to the development kit. The scan is started with the command __i2c scan <device name>__.
+9) Let's do a scan on I2C bus and look for all connected devices. In this example the BME280 breakout board for the [Adding BME280 Sensor Driver to an nRF52480 Project](https://github.com/ChrisKurz/nRF_Connect_SDK/blob/main/doc/NCSv2.5.2_ZDD_Sensors_BME280_nRF52840.md) hands-on is connected to the development kit. The scan is started with the command __i2c scan _device name___.
 
    ![image](images/shell_i2c_terminal_i2cscan.jpg)
 
    This scan shows that a device with slave address 0x76 is connected to the I2C bus.
 
-10) Let's try to read the chip_id of the connected BME280 sensor. The sensor datasheet states that the chip id can be read from register 0xD0 and its content should be 0x60.
+10) Let's try to read the chip_id of the connected BME280 sensor. The sensor datasheet states that the chip id can be read from register 0xD0 and its content should be 0x60. We use the command __i2c read_byte _"device name"_ _"slave address"_ _"sensor register"___.
 
    ![image](images/shell_i2c_terminal_readid.jpg)
 
