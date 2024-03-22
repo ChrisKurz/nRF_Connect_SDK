@@ -82,7 +82,7 @@ This is exactly what we will look at on this page.
        CONFIG_MYAPP_LOG_ENABLED=y
        #CONFIG_MYAPP_LOG_LEVEL_ERR=y
        #CONFIG_MYAPP_LOG_LEVEL_WRN=y
-       #CONFIG_MYAPP_LOG_LEVEL_INF=y
+       CONFIG_MYAPP_LOG_LEVEL_INF=y
        #CONFIG_MYAPP_LOG_LEVEL_DBG=y
        
    __Note:__ prj.conf lines that start with # are comments only! To use one of these CONFIG settings remove the "#".
