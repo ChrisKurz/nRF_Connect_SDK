@@ -31,7 +31,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 ### Shell
 
-- [Adding Zephyr Shell](doc/NCSv2.5.2_10_ZephyrShell.md) - Here we add Zephyr Shell to our project. This module is a UNIX-like shell.
+- [Adding Zephyr Shell](doc/NCSv2.6.0_10_ZephyrShell.md) - Here we add Zephyr Shell to our project. This module is a UNIX-like shell.
 
 
 ## Zephyr Kernel Services
@@ -86,7 +86,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 ## NRFX Driver
 
-- [ADC - Using a single ADC channel](doc/NRFX_ADC_1.md) - Realising a simple single channel ADC conversion based on NRFX ADC driver.
+- [ADC - Using a single ADC channel](doc/NCSv2.5.2_NRFX_ADC_1.md) - Realising a simple single channel ADC conversion based on NRFX ADC driver.
 
 ## CMake
 
