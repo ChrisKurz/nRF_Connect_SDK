@@ -23,7 +23,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 ### Logging
 
-- [Adding Zephyr Logging](doc/NCSv2.5.2_02_ZephyrLogging.md) - Here we add Zephyr Logging to our project. This allows us to get debug messages during runtime.
+- [Adding Zephyr Logging](doc/NCSv2.6.0_02_ZephyrLogging.md) - Here we add Zephyr Logging to our project. This allows us to get debug messages during runtime.
 
 - [Zephyr Logging in modules with multiple files](doc/NCSv2.5.0_02_ZephyrLogging_declare.md) - This hands-on shows how to add Logging to a module that consist of multiple files.
 
