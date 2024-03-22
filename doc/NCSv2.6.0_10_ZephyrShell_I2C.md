@@ -77,7 +77,7 @@ The shell implementation in Zephyr is extremely helpful for carrying out tests w
 
    The list shows that the __i2c@40003000__ is enabled.
 
-9) Let's do a scan on I2C bus and look for all connected devices. In this example the BME280 breakout board for the [Adding BME280 Sensor Driver to an nRF52480 Project](https://github.com/ChrisKurz/nRF_Connect_SDK/blob/main/doc/NCSv2.5.2_ZDD_Sensors_BME280_nRF52840.md) hands-on is connected to the development kit. The scan is started with the command __i2c scan <device name>__.
+9) Let's do a scan on I2C bus and look for all connected devices. In this example the BME280 breakout board for the [Adding BME280 Sensor Driver to an nRF52480 Project](https://github.com/ChrisKurz/nRF_Connect_SDK/blob/main/doc/NCSv2.5.2_ZDD_Sensors_BME280_nRF52840.md) hands-on is connected to the development kit. The scan is started with the command __i2c scan _device name___.
 
    ![image](images/shell_i2c_terminal_i2cscan.jpg)
 
