@@ -71,10 +71,10 @@ Let's prepare a DeviceTree overlay file:
 7) Let's add the configuration for channel 0. When you have added the below lines to the DeviceTree overlay file, move the mouse pointer on the property name (e.g. "zephyr,gain"). You should see that a context window opens and help about this parameter is shown. There are also the two settings for the acquisition time and input-positive. The context window shows just a high level explanation. However, if you click on its defined values (e.g. __ADC_ACQ_TIME_DEFAULT__ or __NRF_SAADC_AIN1__) while pressing the __CTRL__, the header file is opened and the section is shown where this value is defined. Here you find further _defines_ which could also used for configuration of the properties.
 
    The settings we will use here is:
-   - gain = 1/6:
-   - reference = +0.6 V (ADC_REF_INTERNAL):
-   - acquisition time = 10us (ADC_ACQ_TIME_DEFAULT):
-   - input positive = P 0.03 (NRF_SAADC_AIN1): we are using here single-ended input. 
+   - gain = 1/6:  use gain factor 1/6 => input range = 0V ... [0.6V / (1/6)] = 0V ... 3.6V
+   - reference = ADC_REF_INTERNAL: use internal 0.6V reference
+   - acquisition time = ADC_ACQ_TIME_DEFAULT: 10us 
+   - input positive = NRF_SAADC_AIN1 (this is pin P0.03 on an nRF52840DK. For another DK this pin can be different!): we are using here single-ended input. 
    - resolution = 12:  12-bit ADC resolution
 
    Add follwing lines to  __channel@0__:
