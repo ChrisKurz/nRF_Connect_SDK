@@ -74,7 +74,17 @@ Let's prepare a DeviceTree overlay file:
    - gain = 1/6:  use gain factor 1/6 => input range = 0V ... [0.6V / (1/6)] = 0V ... 3.6V
    - reference = ADC_REF_INTERNAL: use internal 0.6V reference
    - acquisition time = ADC_ACQ_TIME_DEFAULT: 10us 
-   - input positive = NRF_SAADC_AIN1 (this is pin P0.03 on an nRF52840DK. For another DK this pin can be different!): we are using here single-ended input. 
+   - input positive = NRF_SAADC_AIN1 (we are using here single-ended input)
+     > nRF52840DK: pin P0.03
+     >
+     > nRF52833DK: pin P0.03
+     >
+     > nRF52DK: pin P0.03
+     >
+     > nRF5340DK: pin P0.05
+     >
+     > nRF7002DK: pin P0.05
+
    - resolution = 12:  12-bit ADC resolution
 
    Add follwing lines to  __channel@0__:
