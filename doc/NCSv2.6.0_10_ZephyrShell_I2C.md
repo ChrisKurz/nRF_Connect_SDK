@@ -35,30 +35,6 @@ The shell implementation in Zephyr is extremely helpful for carrying out tests w
        CONFIG_I2C=y
 
 
-### Adding DeviceTree for connected I2C Sensor
-
-3) Create an DeviceTree overlay file in your project folder. Ensure that the board name is used, which was also used for the board selection in the build configuration. 
-
-4) Now we have to enable the I2C peripheral module by adding following lines to the DeviceTree overlay file:
-  
-    <sup>_nRF52840DK_nRF52840.overlay_</sup>
-    
-       /* Configuration of a BME280 device on an Arduino I2C bus.
-          -------------------------------------------------------
-          Device Address 0x76 is used here. 
-          Selected pins (Arduino I2C bus default pins - I2C0):
-               SCL  ->  P0.27
-               SDA  ->  P0.26
-       */    
-       &arduino_i2c {
-               status = "okay";
-               bme280@76 {
-                       compatible = "bosch,bme280";
-                       reg = <0x76>;
-               };
-       };
-
-
 ## Testing
 
 5) Build the project and download to an nRF52 development kit (e.g. nRF52840-DK).
