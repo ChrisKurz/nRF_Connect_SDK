@@ -80,6 +80,9 @@ I would also like to share a collection of useful links to documentation, descri
 
 - [Read BME280 ID via SPI](doc/NCSv2.5.0_ZDD_SPI_BME280_nRF52840.md) - using nRF52840DK and DEBO BME280 developer board. Reading BME280 chip ID via SPI.
 
+### UART Driver
+
+- [UART driver using Polling](doc/NCSv2.6.0_ZHW_UART_1.md) - The UART driver supports difference ways to handle the communication. In this first example we take a look on the most simple solution: __polling__.
  
 ## Board Definition
 
