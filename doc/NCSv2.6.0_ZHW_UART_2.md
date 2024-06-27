@@ -1,6 +1,6 @@
-<sup>SDK version: NCS v2.6.0  -  Link to Hands-on solution: https://github.com/ChrisKurz/nRF_Connect_SDK/tree/main/Workspace/NCSv2.6.0/ZHW_UART_1</sup>
+<sup>SDK version: NCS v2.6.0  -  Link to Hands-on solution: https://github.com/ChrisKurz/nRF_Connect_SDK/tree/main/Workspace/NCSv2.6.0/ZHW_UART_2</sup>
 
-# Zephyr Hardware Driver: UART - using Polling
+# Zephyr Hardware Driver: UART - interrupt driven
 
 ## Introduction
 
@@ -9,7 +9,7 @@ There are different UART drivers in Zephyr. All have different API functions. Th
 - _interrupt-driven communication_: the UART driver handles data via an interrupt service routine while the user application can continue other tasks. 
 - _asynchronous communication_: this is the most efficient way. it allows to read and write data in the background by using EasyDMA. 
 
-In this hands-on we take a look into the polling solution. 
+In this hands-on we take a look into the interrupt-driven solution. 
 
 ## Required Hardware/Software
 - Development kit [nRF52840DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52840-DK), [nRF52833DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52833-DK), or [nRF52DK](https://www.nordicsemi.com/Products/Development-hardware/nrf52-dk), (nRF54L15DK)
@@ -26,14 +26,17 @@ In this hands-on we take a look into the polling solution.
 
 ### Add needed Software Module _UART_
 
-2) We need the Zephyr UART hardware driver to our project. Note that this driver is usually by default enabled. In the board definition you find for example in the __nrf52840dk_nrf52840_defconfig__ file the following lines:
+2) We have to add the Zephyr UART hardware driver to our project. Note that this driver is usually by default enabled. In the board definition you find for example in the __nrf52840dk_nrf52840_defconfig__ file the following lines:
 
+	<sup>_prj.conf_</sup>
+ 
        # enable uart driver
        CONFIG_SERIAL=y
+       CONFIG_UART_INTERRUPT_DRIVEN=y
 
-    > __NOTE:__ The UART driver (CONFIG_SERIAL=y) is by default selected when working with an nRF52 development kit. For completness it was added here.
+    > __NOTE:__ The UART driver (CONFIG_SERIAL=y) is by default selected when working with an nRF52 development kit. For completness it was added here. It can also be copied into your __prj.conf__ file. 
 
-3) In order to use the UART hardware driver API we also need to add the corresponding header file to our _main.c_ file:
+4) In order to use the UART hardware driver API we also need to add the corresponding header file to our _main.c_ file:
 
 	<sup>_src/main.c_</sup>
 
@@ -43,7 +46,7 @@ In this hands-on we take a look into the polling solution.
 
 4) Create an overlay file. (e.g. __nrf52840DK_nrf52840.overlay__)
 
-5) UART0 is already usind on the development kit for the logging. It's usage is already defined in the board definition files. We will use UART1 in our example here for our own UART communication. Add following lines in the device tree overlay file of your project. 
+5) UART0 is already usind on the development kit for the logging. It's usage is already defined in the board definition files. Beside that we will use UART1 in our example for our own UART communication. Add following lines in the device tree overlay file of your project. 
 
 	<sup>_nrf52840DK_nrf52840.overlay_</sup>
 
@@ -101,69 +104,97 @@ In this hands-on we take a look into the polling solution.
          }
 
 
-### Let's add polling for received data
+### Let's add software parts for the interrupt-driven communication
 
-9)  The polling function allows to receive a single byte. So we will store the received by in the variable _data_.
+9) The Zephyr RTOS is handling interrupts. Because of this, we have to define a callback function, which is executed as soon as the UART interrupt happens. Let's start and add first this callback function.
+
+	<sup>_src/main.c_</sup>
+
+       static void uart_callback(const struct device *dev, void *user_data){
+
+       }
+
+   > __Note__: Since we have to pass the _uart_callback_ function to the UART driver, this callback function should be copied before the _main()_ function. In _main()_ we will pass the _uart_callback_ to UART driver.
+
+10) As just mentioned, now we add the pass the callback function entry point to the UART driver.
 
 	<sup>_src/main.c_ => main() function</sup>
- 
-            unsigned char data;
 
-10) Let's add the while(1) loop in main function and call the _uart_poll_in()_ API function. 
+            uart_irq_callback_set(uart_dev, uart_callback);
+
+### Transmit data
+
+11) The ineterrupt-driven UART driver provides the API function _uart_fifo_fill()_ that has to be called from an interrupt service routine. Because of this we enable the UART TX interrupt and put the data that should be sent in the ISR into the FIFO. So, first we enable the interrupt.
 
 	<sup>_src/main.c_ => main() function</sup>
- 
+
             while(1){
-                while(uart_poll_in(my_uart, &data) <0){
-                    /* Allow other thread/workqueue to work. */
-                    k_yield();            
+                /* Enable Tx/Rx interrupt before using fifo */
+	        uart_irq_tx_enable(uart_dev);
+    
+                k_msleep(1000);
+            }
+
+13) Let's define a string that should be sent. We use _char_sent_ as a pointer in the ISR, which points into the FIFO array and defines the next byte to sent. 
+
+	<sup>_src/main.c_ => main() function</sup>
+
+        static const char fifo_data[] = "This is a test.\r\n";
+        #define DATA_LEN   (sizeof(fifo_data) - 1)
+        static int char_sent;    
+
+14) And the the software part that handles TX in the _uart_callback()_ callback function.
+
+	<sup>_src/main.c_ => uart_callback() function</sup>
+
+            uint8_t recvData;
+            static int tx_data_idx;
+            int ret;
+
+            if (uart_irq_tx_ready(dev) && tx_data_idx < DATA_SIZE) {
+                ret = uart_fifo_fill(dev, (uint8_t *)&fifo_data[tx_data_idx], DATA_LEN-char_sent);
+                if (ret > 0) {
+                    data_transmitted = true;
+                    char_sent += ret;
+                    tx_data_idx += ret;
+                } else {
+                    uart_irq_tx_disable(dev);
+                    return;
+                }
+
+                if (tx_data_idx == DATA_LEN) {
+                    /* If we transmitted everything, disable the interrupt.
+                     * otherwise main app might never run.
+                     */
+                    uart_irq_tx_disable(dev);
                 }
             }
 
-11) Let's output the received byte in the PC's serial terminal program. 
+### Receive data
+
+15) We enable the UART RX interrupt before the _while(1)_ loop in main function
 
 	<sup>_src/main.c_ => main() function</sup>
 
-            printk("received byte: %c \n", data); 
+            uart_irq_rx_enable(uart_dev);
 
-### Now add transmit 
+16) And add code in the uart_callback function that handles receiving of the individual bytes.
 
-12) We use a timer here to send one character each second. So let's setup the Timer. First define the k_timer variable.
+	<sup>_src/main.c_ => uart_callback() function</sup>
 
-	<sup>_src/main.c_</sup>
-
-        struct k_timer MyTimer;
- 
-13) And then initialize the timer.
-
-	<sup>_src/main.c_ => main() function</sup>
-
-            k_timer_init(&MyTimer, TimerExpire, TimerStopped);
-            k_timer_start(&MyTimer, K_MSEC(0), K_MSEC(1000)); // period 1 second
-
-> __NOTE__: You can also check the [Timer](https://github.com/ChrisKurz/nRF_Connect_SDK/blob/main/doc/NCSv2.5.0_ZKS_Timing_02_Timers.md) hands-on.
-
-14) Let's add in TimerExpire function the transmit command.
-
-	<sup>_src/main.c_</sup>
-
-        static void TimerExpire(struct k_timer *timer) {
-            printk("transmit data byte \n");
-            uart_poll_out(my_uart, (unsigned char) '1');
-        }
-
-        static void TimerStopped(struct k_timer *timer) {
-            printk("Timer was stopped!\n");       
-        }
+            if (uart_irq_rx_ready(dev)) {
+                uart_fifo_read(dev, &recvData, 1);
+                printk("%c", recvData); 
+            }
 
 
 ## Testing
 
-15) In case you have only one Developement kit, you could also short the RX and TX pin on your Dev Kit. So you will receive the data byte "1", which is sent each second. In this case the Serial Terminal looks like this:
+17) In case you have only one Developement kit, you could also short the RX and TX pin on your Dev Kit. So you will receive the data byte "1", which is sent each second. In this case the Serial Terminal looks like this:
 
     ![missing image](images/ZHW_UART_RX-TX.jpg)
    
-17) There are different ways to test the software. In case you have two development kits you can connect both boards as follow_
+18) There are different ways to test the software. In case you have two development kits you can connect both boards as follow_
     -  __Dev Kit 1__ <----> __Dev Kit 2__
     -  GND <----> GND      
     -  TX pin <----> RX pin    
