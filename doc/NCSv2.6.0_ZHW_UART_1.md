@@ -159,7 +159,7 @@ In this hands-on we take a look into the polling solution.
 
 ## Testing
 
-15) In case you have only one Developement kit, you could also short the RX and TX pin on your Dev Kit. So you will receive the data byte "1", which is tranmitted each second. In this case the Serial Terminal looks like this:
+15) In case you have only one Developement kit, you could also short the RX and TX pin on your Dev Kit. So you will receive the data byte "1", which is sent each second. In this case the Serial Terminal looks like this:
 
     ![missing image](images/ZHW_UART_RX-TX.jpg)
    
