@@ -48,7 +48,7 @@ In this hands-on we take a look into the polling solution.
 
         &pinctrl {
                  uart1_default: uart1_default {
-		      group1 {
+                      group1 {
                              psels = <NRF_PSEL(UART_RX, 1, 1)>;
                              bias-pull-up;
                       };
