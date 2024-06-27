@@ -160,9 +160,9 @@ In this hands-on we take a look into the polling solution.
 
 15) In case you have only one Developement kit, you could also short the RX and TX pin on your Dev Kit. So you will receive the data byte "1", which is tranmitted each second. In this case the Serial Terminal looks like this:
 
-    !(missing image)[images/ZHW_UART_RX-TX.jpg]
-
-16) There are different ways to test the software. In case you have two development kits you can connect both boards as follow_
+    ![missing image](images/ZHW_UART_RX-TX.jpg)
+   
+17) There are different ways to test the software. In case you have two development kits you can connect both boards as follow_
     -  __Dev Kit 1__ <----> __Dev Kit 2__
     -  GND <----> GND      
     -  TX pin <----> RX pin    
