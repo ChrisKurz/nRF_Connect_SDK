@@ -1,13 +1,19 @@
-<sup>SDK version: NCS v2.6.0  -  Link to Hands-on solution: https://github.com/ChrisKurz/nRF_Connect_SDK/tree/main/Workspace/NCSv2.6.0/ZHW_ADC_1</sup>
+<sup>SDK version: NCS v2.6.0  -  Link to Hands-on solution: https://github.com/ChrisKurz/nRF_Connect_SDK/tree/main/Workspace/NCSv2.6.0/ZHW_UART_1</sup>
 
-# Zephyr Hardware Driver: ADC - Using a single ADC channel
+# Zephyr Hardware Driver: UART - using Polling
 
 ## Introduction
 
-This exercise demonstrates the use of the Zephyr hardware ADC driver. Note that the functionality covered by this driver is limited to basic ADC functions. If advanced ADC features from the device's peripheral module should be used, the ADC drivers from Nordic Semiconductor available in the nrfx library should be used.
+There are different UART drivers in Zephyr. All have different API functions. The different drivers support:
+- _communication using polling_: this one is the most basic method of using the UART peripheral. There is a read function (_uart_poll_in()_) that is a non-blocking function and it returns a character or -1 when no valid data is available. The write function (_uart_poll_out()_) is a blocking function and the user application waits until the character is sent. 
+- _interrupt-driven communication_: the UART driver handles data via an interrupt service routine while the user application can continue other tasks. 
+- _asynchronous communication_: this is the most efficient way. it allows to read and write data in the background by using EasyDMA. 
+
+In this hands-on we take a look into the polling solution. 
 
 ## Required Hardware/Software
 - Development kit [nRF52840DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52840-DK), [nRF52833DK](https://www.nordicsemi.com/Products/Development-hardware/nRF52833-DK), or [nRF52DK](https://www.nordicsemi.com/Products/Development-hardware/nrf52-dk), (nRF54L15DK)
+  > __Note__: Two development kits allow to check communication between boards. It is also possible to test the software with one development kit; in this case the board receives the data byte it has sent.
 - Micro USB Cable (Note that the cable is not included in the previous mentioned development kits.)
 - install the _nRF Connect SDK_ v2.6.0 and _Visual Studio Code_. The installation process is described [here](https://academy.nordicsemi.com/courses/nrf-connect-sdk-fundamentals/lessons/lesson-1-nrf-connect-sdk-introduction/topic/exercise-1-1/).
 
@@ -18,194 +24,159 @@ This exercise demonstrates the use of the Zephyr hardware ADC driver. Note that 
 1) Create a new project based on [Creating a Project from Scratch_ exercise](https://github.com/ChrisKurz/nRF_Connect_SDK/blob/main/doc/NCSv2.6.0_01_ProjectFromScratch.md). 
 
 
-### Add needed Software Module
+### Add needed Software Module _UART_
 
-2) Now we add the Zephyr ADC hardware driver to our project. Add following lines to the _prj.conf_ file:
+2) We need the Zephyr UART hardware driver to our project. Note that this driver is usually by default enabled. In the board definition you find for example in the __nrf52840dk_nrf52840_defconfig__ file the following lines:
 
-	<sup>_prj.conf_</sup>
+       # enable uart driver
+       CONFIG_SERIAL=y
 
-       # Enable Zephyr ADC Hardware driver
-       CONFIG_ADC=y
+    > __NOTE:__ The UART driver (CONFIG_SERIAL=y) is by default selected when working with an nRF52 development kit. For completness it was added here.
 
-
-3) In order to use the ADC hardware driver API we also need to add the corresponding header file to our _main.c_ file:
+3) In order to use the UART hardware driver API we also need to add the corresponding header file to our _main.c_ file:
 
 	<sup>_src/main.c_</sup>
 
-       #include <zephyr/drivers/adc.h>
+       #include <zephyr/drivers/uart.h>
 
-### Adding DeviceTree overlay file for ADC
-
-The ADC peripheral and pinmux is configured in the DeviceTree file. Following definitions have to be added there:
-
-- enabling of ADC by setting _status="okay";_. 
-- ADC channels specified in the _io_channels_ property of the _zephyr,user_ node
-- configuration of channels (settings like gain, reference, and acquisition time)
-- ADC resolution
-- oversampling settings (if used)
-
-Let's prepare a DeviceTree overlay file:
+### Adding DeviceTree overlay file for UART
 
 4) Create an overlay file. (e.g. __nrf52840DK_nrf52840.overlay__)
 
-5) Now add the _io_channels_ property in this file. Here we define to use one ADC peripheral (instance) and we could define a channel sequence with different configurations. However, in this first hands-on we will use only one ADC input channel. 
+5) UART0 is already usind on the development kit for the logging. It's usage is already defined in the board definition files. We will use UART1 in our example here for our own UART communication. Add following lines in the device tree overlay file of your project. 
 
 	<sup>_nrf52840DK_nrf52840.overlay_</sup>
 
-       / {
-              zephyr,user {
-                      io-channels = <&adc 0>; 
-              };
+        &pinctrl {
+                 uart1_default: uart1_default {
+                      group1 {
+                             psels = <NRF_PSEL(UART_RX, 1, 1)>;
+                             bias-pull-up;
+                      };
+                      group2 {
+                             psels = <NRF_PSEL(UART_TX, 1, 2)>;
+                      };
+                 };
+
+                 uart1_sleep: uart1_sleep {
+                      group1 {
+                             psels = <NRF_PSEL(UART_RX, 1, 1)>,
+                                     <NRF_PSEL(UART_TX, 1, 2)>;
+                             low-power-enable;
+                      };
+                 };
        };
 
-       &adc {
-              #address-cells = <1>;
-              #size-cells = <0>;
-              status = "okay";  
-              channel@0 {
-                      reg = <0>;
-		
-	            };
+       &uart1 {
+               compatible = "nordic,nrf-uart";
+               status = "okay";
+               current-speed = <115200>;
+               pinctrl-0 = <&uart1_default>;
+               pinctrl-1 = <&uart1_sleep>;
+               pinctrl-names = "default", "sleep";
        };
-
-7) Let's add the configuration for channel 0. When you have added the below lines to the DeviceTree overlay file, move the mouse pointer on the property name (e.g. "zephyr,gain"). You should see that a context window opens and help about this parameter is shown. There are also the two settings for the acquisition time and input-positive. The context window shows just a high level explanation. However, if you click on its defined values (e.g. __ADC_ACQ_TIME_DEFAULT__ or __NRF_SAADC_AIN1__) while pressing the __CTRL__, the header file is opened and the section is shown where this value is defined. Here you find further _defines_ which could also used for configuration of the properties.
-
-   The settings we will use here is:
-   - gain = 1/6:  use gain factor 1/6 => input range = 0V ... [0.6V / (1/6)] = 0V ... 3.6V
-   - reference = ADC_REF_INTERNAL: use internal 0.6V reference
-   - acquisition time = ADC_ACQ_TIME_DEFAULT: 10us 
-   - input positive = NRF_SAADC_AIN1 (we are using here single-ended input)
-     > nRF52840DK: pin P0.03
-     >
-     > nRF52833DK: pin P0.03
-     >
-     > nRF52DK: pin P0.03
-     >
-     > nRF5340DK: pin P0.05
-     >
-     > nRF7002DK: pin P0.05
-
-   - resolution = 12:  12-bit ADC resolution
-
-   Add follwing lines to  __channel@0__:
-   
-	<sup>_nrf52840DK_nrf52840.overlay_ => add to __channel@0__ property</sup>
-
-                      zephyr,gain = "ADC_GAIN_1_6";
-                      zephyr,reference = "ADC_REF_INTERNAL";
-                      zephyr,acquisition-time = <ADC_ACQ_TIME_DEFAULT>;
-                      zephyr,input-positive = <NRF_SAADC_AIN1>; /* P0.03 */
-                      zephyr,resolution = <12>;
-
-So your DeviceTree overlay file should now look like this:
-
-![missing image](images/ZHW_ADC_1_overlayFile.jpg)
 
 
 ### Including DeviceTree Configuration in C source code
 
-9) First, include the devicetree header file into your project.
+6) First, include the devicetree header file into your project.
 
 	<sup>_src/main.c_</sup>
 
        #include <zephyr/devicetree.h>
 
-10) We need a variable of type __adc_dt_spec__ for each ADC channel. We can use the __ADC_DT_SPEC_GET()__ macro to get the io-channel defintions, because we use here only one ADC input channel.
+7) We need a variable of type __device__ for the UART instance. 
 
 	<sup>_src/main.c_</sup>
 
-        static const struct adc_dt_spec adc_channel = ADC_DT_SPEC_GET(DT_PATH(zephyr_user));    
+        static const struct device *const my_uart = DEVICE_DT_GET(DT_NODELABEL(uart1)); 
 
-11) Before we use the ADC we should check if the ADC peripheral (SAADC) is ready. 
-
-	<sup>_src/main.c_ => main() function</sup>
-
-            if (!adc_is_ready_dt(&adc_channel)) {
-                printk("ADC controller device %s not ready\n", adc_channel.dev->name);
-                return 0;
-            }
-
-12) If it is ready we setup the ADC channel.
+8) Before we use the UART we should check if the UART peripheral driver is ready. 
 
 	<sup>_src/main.c_ => main() function</sup>
 
-            int err;
+         if (!device_is_ready(my_uart)) {
+             printk("UART device not ready\n");
+             return 0;
+         }
 
-            err = adc_channel_setup_dt(&adc_channel);
-            if (err < 0) {
-                printk("Could not setup channel #%d (%d)\n", 0, err);
-                return 0;
-            }
 
-### First, we have to do some ADC initialization
+### Let's add polling for received data
 
-13) Define a variable of type __adc_sequence__ and a buffer of type __int16_t__ to specify where the samples are to be written.
+9)  The polling function allows to receive a single byte. So we will store the received by in the variable _data_.
 
 	<sup>_src/main.c_ => main() function</sup>
-
-            int16_t buf;
-            struct adc_sequence sequence = {
-                .buffer = &buf,
-                /* buffer size in bytes, not number of samples */
-                .buffer_size = sizeof(buf),
-            };
-
-14) Initialize the ADC sequence.
-
-	<sup>_src/main.c_ => main() function</sup>
-
-            err = adc_sequence_init_dt(&adc_channel, &sequence);
-            if (err < 0) {
-                printk("Could not initalize sequnce\n");
-                return 0;
-            }
  
-### Then we can periodically read the ADC conversion results
+            unsigned char data;
 
-15) Read the ADC conversion result.
+10) Let's add the while(1) loop in main function and call the _uart_poll_in()_ API function. 
 
 	<sup>_src/main.c_ => main() function</sup>
-
+ 
             while(1){
-                err = adc_read(adc_channel.dev, &sequence);
-                if (err < 0) {
-                    printk("Could not read (%d)\n", err);
-                    continue;
+                while(uart_poll_in(my_uart, &data) <0){
+                    /* Allow other thread/workqueue to work. */
+                    k_yield();            
                 }
-                val_mv = (int)buf;
-                printk("ADC result: %s, channel %d: Raw: %i ", adc_channel.dev->name, adc_channel.channel_id, val_mv);
-
-
             }
 
-17) Convert ADC conversion result to mV.
+11) Let's output the received byte in the PC's serial terminal program. 
 
-	<sup>_src/main.c_ => main() function => while(1) loop </sup>
+	<sup>_src/main.c_ => main() function</sup>
+
+            printk("received byte: %c \n", data); 
+
+### Now add transmit 
+
+12) We use a timer here to send one character each second. So let's setup the Timer. First define the k_timer variable.
+
+	<sup>_src/main.c_</sup>
+
+        struct k_timer MyTimer;
  
-                int val_mv;
+13) And then initialize the timer.
 
-                err = adc_raw_to_millivolts_dt(&adc_channel, &val_mv);
-                /* conversion to mV may not be supported, skip if not */
-                if (err < 0) {
-                    printk(" (value in mV not available)\n");
-                } else {
-                    printk(" = %d mV\n", val_mv);
-                }
+	<sup>_src/main.c_ => main() function</sup>
 
-18) And finally we add some delay before the next ADC conversion result is read.
+            k_timer_init(&MyTimer, TimerExpire, TimerStopped);
+            k_timer_start(&MyTimer, K_MSEC(0), K_MSEC(1000)); // period 1 second
 
-	<sup>_src/main.c_ => main() function => while(1) loop </sup>
- 
-                k_sleep(K_MSEC(1000));
+> __NOTE__: You can also check the [Timer](https://github.com/ChrisKurz/nRF_Connect_SDK/blob/main/doc/NCSv2.5.0_ZKS_Timing_02_Timers.md) hands-on.
+
+14) Let's add in TimerExpire function the transmit command.
+
+	<sup>_src/main.c_</sup>
+
+        static void TimerExpire(struct k_timer *timer) {
+            printk("transmit data byte \n");
+            uart_poll_out(my_uart, (unsigned char) '1');
+        }
+
+        static void TimerStopped(struct k_timer *timer) {
+            printk("Timer was stopped!\n");       
+        }
+
 
 ## Testing
 
-19) Build and flash the application on your development kit.
+15) In case you have only one Developement kit, you could also short the RX and TX pin on your Dev Kit. So you will receive the data byte "1", which is tranmitted each second. In this case the Serial Terminal looks like this:
 
-20) Apply a test input voltage to the ADC input AIN1.
+    ![missing image](images/ZHW_UART_RX-TX.jpg)
+   
+17) There are different ways to test the software. In case you have two development kits you can connect both boards as follow_
+    -  __Dev Kit 1__ <----> __Dev Kit 2__
+    -  GND <----> GND      
+    -  TX pin <----> RX pin    
+    -  RX pin <----> TX pin    
 
-21) Check the output on the Serial Termnial, which you get from the development kit. 
+   Open two Serial Terminal windows and connect the each one with one of your dev kits boards. you should see the same output as in previous step. However, this time the received data comes from the other board.
 
-   ![missing image](images/ADC_1_terminal_NCSv2.6.0.jpg)
 
-   _This screen shot shows the measurment when VDD is connected to the ADC input pin._
+
+
+
+
+
+
+
+
