@@ -192,7 +192,7 @@ In this hands-on we take a look into the interrupt-driven solution.
 
 17) In case you have only one Developement kit, you could also short the RX and TX pin on your Dev Kit. So you will receive the data byte "1", which is sent each second. In this case the Serial Terminal looks like this:
 
-    ![missing image](images/ZHW_UART_RX-TX.jpg)
+    ![missing image](images/ZHW_UART_INT-RX-TX.jpg)
    
 18) There are different ways to test the software. In case you have two development kits you can connect both boards as follow_
     -  __Dev Kit 1__ <----> __Dev Kit 2__
