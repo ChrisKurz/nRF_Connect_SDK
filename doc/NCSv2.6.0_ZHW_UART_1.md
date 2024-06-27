@@ -30,7 +30,7 @@ In this hands-on we take a look into the polling solution.
        # enable uart driver
        CONFIG_SERIAL=y
 
-    > __NOTE:__ In case these lines are not included in your _defconfig_ file, please add these lines to your __prj.conf__ file. 
+    > __NOTE:__ The UART driver (CONFIG_SERIAL=y) is by default selected when working with an nRF52 development kit. For completness it was added here.
 
 3) In order to use the UART hardware driver API we also need to add the corresponding header file to our _main.c_ file:
 
