@@ -140,7 +140,7 @@ In this hands-on we take a look into the polling solution.
             k_timer_init(&MyTimer, TimerExpire, TimerStopped);
             k_timer_start(&MyTimer, K_MSEC(0), K_MSEC(1000)); // period 1 second
 
-> __NOTE__: You can also check the (Timer)[https://github.com/ChrisKurz/nRF_Connect_SDK/blob/main/doc/NCSv2.5.0_ZKS_Timing_02_Timers.md] hands-on.
+> __NOTE__: You can also check the [Timer](https://github.com/ChrisKurz/nRF_Connect_SDK/blob/main/doc/NCSv2.5.0_ZKS_Timing_02_Timers.md) hands-on.
 
 14) Let's add in TimerExpire function the transmit command.
 
