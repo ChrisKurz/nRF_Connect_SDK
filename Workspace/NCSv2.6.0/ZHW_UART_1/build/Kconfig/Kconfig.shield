@@ -1,2 +1,0 @@
-osource "c:/nordic/myboards/boards/shields/*/Kconfig.shield"
-osource "C:/Nordic/NCS/v2.6.0/nrf/boards/shields/*/Kconfig.shield"
