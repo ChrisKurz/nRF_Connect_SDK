@@ -36,6 +36,7 @@ The Zephyr kernel provides a _Timer_ object that can be used to generate timings
    _k_timer_init()_ function description:
    
    ![image](images/ZKS_Timing_02_KTimerInit.jpg)
+   
    <sup>https://docs.nordicsemi.com/bundle/ncs-2.5.0/page/zephyr/kernel/services/timing/timers.html#c.k_timer_init</sup>
 
 
@@ -58,6 +59,7 @@ The Zephyr kernel provides a _Timer_ object that can be used to generate timings
    _k_timer_stop()_ function description:
    
    ![image](images/ZKS_Timing_02_KTimerStop.jpg)
+   
    <sup>https://docs.nordicsemi.com/bundle/ncs-2.5.0/page/zephyr/kernel/services/timing/timers.html#c.k_timer_stop</sup>
 
 
@@ -82,6 +84,7 @@ The Zephyr kernel provides a _Timer_ object that can be used to generate timings
    _k_timer_start()_ function description:
    
    ![image](images/ZKS_Timing_02_KTimerStart.jpg)
+   
    <sup>https://docs.nordicsemi.com/bundle/ncs-2.5.0/page/zephyr/kernel/services/timing/timers.html#c.k_timer_start</sup>
        
        
