@@ -36,7 +36,7 @@ The Zephyr kernel provides a _Timer_ object that can be used to generate timings
    _k_timer_init()_ function description:
    
    ![image](images/ZKS_Timing_02_KTimerInit.jpg)
-   <sup>https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.5.0/zephyr/kernel/services/timing/timers.html#c.k_timer_init</sup>
+   <sup>https://docs.nordicsemi.com/bundle/ncs-2.5.0/page/zephyr/kernel/services/timing/timers.html#c.k_timer_init</sup>
 
 
 ### Define expireation callback function
@@ -58,7 +58,7 @@ The Zephyr kernel provides a _Timer_ object that can be used to generate timings
    _k_timer_stop()_ function description:
    
    ![image](images/ZKS_Timing_02_KTimerStop.jpg)
-   <sup>https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.5.0/zephyr/kernel/services/timing/timers.html#c.k_timer_stop</sup>
+   <sup>https://docs.nordicsemi.com/bundle/ncs-2.5.0/page/zephyr/kernel/services/timing/timers.html#c.k_timer_stop</sup>
 
 
 ### Define stop timer callback function
@@ -82,7 +82,7 @@ The Zephyr kernel provides a _Timer_ object that can be used to generate timings
    _k_timer_start()_ function description:
    
    ![image](images/ZKS_Timing_02_KTimerStart.jpg)
-   <sup>https://developer.nordicsemi.com/nRF_Connect_SDK/doc/2.5.0/zephyr/kernel/services/timing/timers.html#c.k_timer_start</sup>
+   <sup>https://docs.nordicsemi.com/bundle/ncs-2.5.0/page/zephyr/kernel/services/timing/timers.html#c.k_timer_start</sup>
        
        
 ## Testing
