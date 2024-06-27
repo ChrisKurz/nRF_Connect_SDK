@@ -148,7 +148,7 @@ In this hands-on we take a look into the polling solution.
 
         static void TimerExpire(struct k_timer *timer) {
             printk("transmit data byte \n");
-            uart_poll_out(my_uart, (unsigned char) "1");
+            uart_poll_out(my_uart, (unsigned char) '1');
         }
 
         static void TimerStopped(struct k_timer *timer) {
