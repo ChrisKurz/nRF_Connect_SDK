@@ -1,6 +1,6 @@
 <sup>SDK version: NCS v2.6.0  -  Link to Hands-on solution: https://github.com/ChrisKurz/nRF_Connect_SDK/tree/main/Workspace/NCSv2.6.0/ZHW_UART_1</sup>
 
-# Zephyr Hardware Driver: UART - Using a single ADC channel
+# Zephyr Hardware Driver: UART - using Polling
 
 ## Introduction
 
