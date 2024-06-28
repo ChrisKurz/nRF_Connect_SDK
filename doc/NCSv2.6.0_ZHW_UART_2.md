@@ -120,7 +120,7 @@ In this hands-on we take a look into the interrupt-driven solution.
 
 	<sup>_src/main.c_ => main() function</sup>
 
-             uart_irq_callback_set(uart_dev, uart_callback);
+             uart_irq_callback_set(my_uart, uart_callback);
 
 ### Transmit data
 
@@ -151,7 +151,7 @@ In this hands-on we take a look into the interrupt-driven solution.
              static int tx_data_idx;
              int ret;
 
-             if (uart_irq_tx_ready(dev) && tx_data_idx < DATA_SIZE) {
+             if (uart_irq_tx_ready(dev) && tx_data_idx < DATA_LEN) {
                   ret = uart_fifo_fill(dev, (uint8_t *)&fifo_data[tx_data_idx], DATA_LEN-char_sent);
                   if (ret > 0) {
                        data_transmitted = true;
@@ -176,7 +176,7 @@ In this hands-on we take a look into the interrupt-driven solution.
 
 	<sup>_src/main.c_ => main() function</sup>
 
-             uart_irq_rx_enable(uart_dev);
+             uart_irq_rx_enable(my_uart);
 
 15) And add code in the uart_callback function that handles receiving of the individual bytes.
 
