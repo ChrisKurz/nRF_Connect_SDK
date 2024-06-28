@@ -182,10 +182,10 @@ In this hands-on we take a look into the interrupt-driven solution.
 
 	<sup>_src/main.c_ => uart_callback() function</sup>
 
-            if (uart_irq_rx_ready(dev)) {
-                uart_fifo_read(dev, &recvData, 1);
-                printk("%c", recvData); 
-            }
+             if (uart_irq_rx_ready(dev)) {
+                  uart_fifo_read(dev, &recvData, 1);
+                  printk("%c", recvData); 
+             }
 
 
 ## Testing
