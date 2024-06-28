@@ -135,9 +135,9 @@ In this hands-on we take a look into the interrupt-driven solution.
                   k_msleep(1000);
              }
 
-13) Let's define a string that should be sent. We use _char_sent_ as a pointer in the ISR, which points into the FIFO array and defines the next byte to sent. 
+13) Let's define a string that should be sent. We use _char_sent_ as a pointer in the ISR, which points into the FIFO array and defines the next byte to sent. These are global definitions.
 
-	<sup>_src/main.c_ => main() function</sup>
+	<sup>_src/main.c_</sup>
 
         static const char fifo_data[] = "This is a test.\r\n";
         #define DATA_LEN   (sizeof(fifo_data) - 1)
