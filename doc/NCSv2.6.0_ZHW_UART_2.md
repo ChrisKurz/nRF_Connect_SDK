@@ -139,8 +139,8 @@ In this hands-on we take a look into the interrupt-driven solution.
 
 	<sup>_src/main.c_</sup>
 
-        static const char fifo_data[] = "This is a test.\r\n";
         #define DATA_LEN   (sizeof(fifo_data) - 1)
+	static const char fifo_data[] = "This is a test.\r\n";
         static int char_sent;    
 
 14) And the the software part that handles TX in the _uart_callback()_ callback function.
