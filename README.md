@@ -83,6 +83,9 @@ I would also like to share a collection of useful links to documentation, descri
 ### UART Driver
 
 - [UART driver using Polling](doc/NCSv2.6.0_ZHW_UART_1.md) - The UART driver supports difference ways to handle the communication. In this first example we take a look on the most simple solution: __polling__.
+
+- [interrupt-driven UART driver ](doc/NCSv2.6.0_ZHW_UART_2.md) - In this example the __interrupt-driven__ UART communication is shown. 
+
  
 ## Board Definition
 
