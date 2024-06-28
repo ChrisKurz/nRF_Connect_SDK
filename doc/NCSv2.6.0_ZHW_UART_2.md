@@ -176,7 +176,7 @@ In this hands-on we take a look into the interrupt-driven solution.
 
 	<sup>_src/main.c_ => main() function</sup>
 
-            uart_irq_rx_enable(uart_dev);
+             uart_irq_rx_enable(uart_dev);
 
 15) And add code in the uart_callback function that handles receiving of the individual bytes.
 
