@@ -92,7 +92,7 @@ In this hands-on we take a look into the interrupt-driven solution.
 
 	<sup>_src/main.c_</sup>
 
-        static const struct device *const my_uart = DEVICE_DT_GET(DT_NODELABEL(uart1)); 
+       static const struct device *const my_uart = DEVICE_DT_GET(DT_NODELABEL(uart1)); 
 
 8) Before we use the UART we should check if the UART peripheral driver is ready. 
 
