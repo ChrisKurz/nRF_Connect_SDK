@@ -147,28 +147,28 @@ In this hands-on we take a look into the interrupt-driven solution.
 
 	<sup>_src/main.c_ => uart_callback() function</sup>
 
-            uint8_t recvData;
-            static int tx_data_idx;
-            int ret;
+             uint8_t recvData;
+             static int tx_data_idx;
+             int ret;
 
-            if (uart_irq_tx_ready(dev) && tx_data_idx < DATA_SIZE) {
-                ret = uart_fifo_fill(dev, (uint8_t *)&fifo_data[tx_data_idx], DATA_LEN-char_sent);
-                if (ret > 0) {
-                    data_transmitted = true;
-                    char_sent += ret;
-                    tx_data_idx += ret;
-                } else {
-                    uart_irq_tx_disable(dev);
-                    return;
-                }
+             if (uart_irq_tx_ready(dev) && tx_data_idx < DATA_SIZE) {
+                  ret = uart_fifo_fill(dev, (uint8_t *)&fifo_data[tx_data_idx], DATA_LEN-char_sent);
+                  if (ret > 0) {
+                       data_transmitted = true;
+                       char_sent += ret;
+                       tx_data_idx += ret;
+                  } else {
+                       uart_irq_tx_disable(dev);
+                       return;
+                  }
 
-                if (tx_data_idx == DATA_LEN) {
-                    /* If we transmitted everything, disable the interrupt.
-                     * otherwise main app might never run.
-                     */
-                    uart_irq_tx_disable(dev);
-                }
-            }
+                  if (tx_data_idx == DATA_LEN) {
+                       /* If we transmitted everything, disable the interrupt.
+                        * otherwise main app might never run.
+                        */
+                       uart_irq_tx_disable(dev);
+                  }
+             }
 
 ### Receive data
 
