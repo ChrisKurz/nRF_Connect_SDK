@@ -135,15 +135,15 @@ In this hands-on we take a look into the interrupt-driven solution.
                   k_msleep(1000);
              }
 
-13) Let's define a string that should be sent. We use _char_sent_ as a pointer in the ISR, which points into the FIFO array and defines the next byte to sent. These are global definitions.
+12) Let's define a string that should be sent. We use _char_sent_ as a pointer in the ISR, which points into the FIFO array and defines the next byte to sent. These are global definitions.
 
 	<sup>_src/main.c_</sup>
 
         #define DATA_LEN   (sizeof(fifo_data) - 1)
-	static const char fifo_data[] = "This is a test.\r\n";
+	    static const char fifo_data[] = "This is a test.\r\n";
         static int char_sent;    
 
-14) And the the software part that handles TX in the _uart_callback()_ callback function.
+13) And the the software part that handles TX in the _uart_callback()_ callback function.
 
 	<sup>_src/main.c_ => uart_callback() function</sup>
 
@@ -172,13 +172,13 @@ In this hands-on we take a look into the interrupt-driven solution.
 
 ### Receive data
 
-15) We enable the UART RX interrupt before the _while(1)_ loop in main function
+14) We enable the UART RX interrupt before the _while(1)_ loop in main function
 
 	<sup>_src/main.c_ => main() function</sup>
 
             uart_irq_rx_enable(uart_dev);
 
-16) And add code in the uart_callback function that handles receiving of the individual bytes.
+15) And add code in the uart_callback function that handles receiving of the individual bytes.
 
 	<sup>_src/main.c_ => uart_callback() function</sup>
 
@@ -190,24 +190,14 @@ In this hands-on we take a look into the interrupt-driven solution.
 
 ## Testing
 
-17) In case you have only one Developement kit, you could also short the RX and TX pin on your Dev Kit. So you will receive the data byte "1", which is sent each second. In this case the Serial Terminal looks like this:
+16) In case you have only one Developement kit, you could also short the RX and TX pin on your Dev Kit. So you will receive the data byte "1", which is sent each second. In this case the Serial Terminal looks like this:
 
     ![missing image](images/ZHW_UART_INT-RX-TX.jpg)
    
-18) There are different ways to test the software. In case you have two development kits you can connect both boards as follow_
+17) There are different ways to test the software. In case you have two development kits you can connect both boards as follow_
     -  __Dev Kit 1__ <----> __Dev Kit 2__
     -  GND <----> GND      
     -  TX pin <----> RX pin    
     -  RX pin <----> TX pin    
 
    Open two Serial Terminal windows and connect the each one with one of your dev kits boards. you should see the same output as in previous step. However, this time the received data comes from the other board.
-
-
-
-
-
-
-
-
-
-
