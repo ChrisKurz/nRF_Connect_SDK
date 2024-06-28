@@ -98,10 +98,10 @@ In this hands-on we take a look into the interrupt-driven solution.
 
 	<sup>_src/main.c_ => main() function</sup>
 
-         if (!device_is_ready(my_uart)) {
-             printk("UART device not ready\n");
-             return 0;
-         }
+            if (!device_is_ready(my_uart)) {
+                 printk("UART device not ready\n");
+                 return 0;
+            }
 
 
 ### Let's add software parts for the interrupt-driven communication
