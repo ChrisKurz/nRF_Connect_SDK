@@ -128,12 +128,12 @@ In this hands-on we take a look into the interrupt-driven solution.
 
 	<sup>_src/main.c_ => main() function</sup>
 
-            while(1){
-                /* Enable Tx/Rx interrupt before using fifo */
-	        uart_irq_tx_enable(uart_dev);
+             while(1){
+                  /* Enable Tx/Rx interrupt before using fifo */
+                  uart_irq_tx_enable(uart_dev);
     
-                k_msleep(1000);
-            }
+                  k_msleep(1000);
+             }
 
 13) Let's define a string that should be sent. We use _char_sent_ as a pointer in the ISR, which points into the FIFO array and defines the next byte to sent. 
 
