@@ -120,7 +120,7 @@ In this hands-on we take a look into the interrupt-driven solution.
 
 	<sup>_src/main.c_ => main() function</sup>
 
-            uart_irq_callback_set(uart_dev, uart_callback);
+             uart_irq_callback_set(uart_dev, uart_callback);
 
 ### Transmit data
 
