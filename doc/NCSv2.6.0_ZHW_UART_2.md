@@ -130,7 +130,7 @@ In this hands-on we take a look into the interrupt-driven solution.
 
              while(1){
                   /* Enable Tx/Rx interrupt before using fifo */
-                  uart_irq_tx_enable(uart_dev);
+                  uart_irq_tx_enable(my_uart);
     
                   k_msleep(1000);
              }
@@ -154,7 +154,6 @@ In this hands-on we take a look into the interrupt-driven solution.
              if (uart_irq_tx_ready(dev) && tx_data_idx < DATA_LEN) {
                   ret = uart_fifo_fill(dev, (uint8_t *)&fifo_data[tx_data_idx], DATA_LEN-char_sent);
                   if (ret > 0) {
-                       data_transmitted = true;
                        char_sent += ret;
                        tx_data_idx += ret;
                   } else {
