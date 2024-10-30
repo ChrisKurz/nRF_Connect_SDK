@@ -32,7 +32,7 @@ We will write and read a single character via SPI.
        #include <zephyr/kernel.h>
        #include <nrfx_spi.h>
 
-   Note: kernel.h is included here to allow usage of certain kernal speciifc functions, e.g. k_msleep().
+   Note: kernel.h is included here to allow usage of certain kernal specific functions, e.g. k_msleep().
 
 
 ### SPI initialization
