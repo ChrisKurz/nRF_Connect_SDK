@@ -12,7 +12,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 ## Getting started
 
-- [Creating a Project from Scratch](doc/NCSv2.6.0_01_ProjectFromScratch.md) - This hands-on demonstrates how to create a project from scratch.
+- [Creating a Project from Scratch](doc/NCSv2.9.0_01_ProjectFromScratch.md) - This hands-on demonstrates how to create a project from scratch.
 
 - [User-defined KCONFIG symbols](doc/NCSv2.6.0_03_User-Defined_KCONFIG.md) - KCONFIG allows you to add software modules from Zephyr repository or other repositories. But you can also define own KCONFIG symbols. This hands-on demonstrates how this can be done
 
@@ -23,7 +23,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 ### Logging
 
-- [Adding Zephyr Logging](doc/NCSv2.6.0_02_ZephyrLogging.md) - Here we add Zephyr Logging to our project. This allows us to get debug messages during runtime.
+- [Adding Zephyr Logging](doc/NCSv2.9.0_02_ZephyrLogging.md) - Here we add Zephyr Logging to our project. This allows us to get debug messages during runtime.
 
 - [Zephyr Logging in modules with multiple files](doc/NCSv2.5.0_02_ZephyrLogging_declare.md) - This hands-on shows how to add Logging to a module that consist of multiple files.
 
@@ -55,9 +55,9 @@ I would also like to share a collection of useful links to documentation, descri
 
 #### Version
 
-- [Getting Zephyr version from application software](doc/NCSv2.5.0_ZKS_Other_01_version.md) - This example shows how to retrieve the version number of Zephyr in an application software. 
+- [Getting Zephyr version from application software](doc/NCSv2.9.0_ZKS_Other_01_version.md) - This example shows how to retrieve the version number of Zephyr in an application software. 
 
-- [_nRF Connect SDK_ version](doc/NCSv2.5.0_NCS_Version.md) - The application software can also read out the _nRF Connect SDK_ version. This example shows how. 
+- [_nRF Connect SDK_ version](doc/NCSv2.9.0_NCS_Version.md) - The application software can also read out the _nRF Connect SDK_ version. This example shows how. 
 
 - [Application Firmware Version](doc/NCSv2.5.0_App_Version.md) - Zephyr includes since _nRF Connect SDK v2.5.0_ an application version management. This example shows how to use it.
 
