@@ -59,7 +59,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 - [_nRF Connect SDK_ version](doc/NCSv2.9.0_NCS_Version.md) - The application software can also read out the _nRF Connect SDK_ version. This example shows how. 
 
-- [Application Firmware Version](doc/NCSv2.5.0_App_Version.md) - Zephyr includes since _nRF Connect SDK v2.5.0_ an application version management. This example shows how to use it.
+- [Application Firmware Version](doc/NCSv2.9.0_App_Version.md) - Zephyr includes since _nRF Connect SDK v2.5.0_ an application version management. This example shows how to use it.
 
 
 ## Zephyr Device Drivers
