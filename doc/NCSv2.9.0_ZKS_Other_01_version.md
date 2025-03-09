@@ -78,4 +78,4 @@ And here is another way to use Zephyr Version numbers.
 6) Build the project and donwload it to your development kit. 
 7) In the terminal you should see following outuput:
 
-   ![image](images/ZKS_Other_01_version_NCSv2.5.0.jpg)
+   ![image](images/ZKS_Other_01_version_NCSv2.9.0.jpg)
