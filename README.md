@@ -55,7 +55,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 #### Version
 
-- [Getting Zephyr version from application software](doc/NCSv2.5.0_ZKS_Other_01_version.md) - This example shows how to retrieve the version number of Zephyr in an application software. 
+- [Getting Zephyr version from application software](doc/NCSv2.9.0_ZKS_Other_01_version.md) - This example shows how to retrieve the version number of Zephyr in an application software. 
 
 - [_nRF Connect SDK_ version](doc/NCSv2.5.0_NCS_Version.md) - The application software can also read out the _nRF Connect SDK_ version. This example shows how. 
 
