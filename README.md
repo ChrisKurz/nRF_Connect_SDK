@@ -39,7 +39,7 @@ I would also like to share a collection of useful links to documentation, descri
 
 ### Threads
 
-- [Thread: Creating a Thread](doc/NCSv2.5.0_ZKS_Threads_01.md) - This basic hands-on demonstrates how to create a Thread.
+- [Thread: Creating a Thread](doc/NCSv2.9.0_ZKS_Threads_01.md) - This basic hands-on demonstrates how to create a Thread.
 
 ### Data Passing
 
